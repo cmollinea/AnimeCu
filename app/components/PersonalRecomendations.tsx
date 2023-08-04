@@ -1,5 +1,6 @@
 import OneAnime from '@/app/mocks/OneAnimeInfo.json';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const recomendations = [OneAnime.data, OneAnime.data, OneAnime.data];
 
@@ -8,22 +9,30 @@ const recomendations = [OneAnime.data, OneAnime.data, OneAnime.data];
 
 function PersonalRecomendations() {
   return (
-    <ul className='grid grid-cols-3 justify-center max-lg:grid-cols-1 w-full px-20 py-10 gap-10'>
+    <ul className='grid grid-cols-3 justify-center mx-auto max-lg:grid-cols-1 px-20 py-16 gap-20'>
       {recomendations.map((anime, index) => (
-        <li key={index} className='flex flex-col'>
+        <li key={index} className='flex flex-col w-fit'>
           <Image
             src={anime.images.webp.large_image_url}
             alt={anime.title_japanese}
             width={300}
             height={400}
           />
-          <h1 className='text-xl font-bold'>{anime.title}</h1>
+          <h1 className='text-xl py-4 font-black'>{anime.title}</h1>
           <p className='px-6'>{anime.background}</p>
           <div className='flex gap-4'>
-            <button className=' btn btn-primary bg-teal-400/80  text-gray-100 border-none hover:bg-teal-600'>
+            <Link
+              className=' py-2 px-3 font-bold rounded-lg bg-base-100 border border-solid border-teal-400/50  text-gray-100 hover:bg-teal-400 transition-all duration-300 ease-in-out'
+              href={`/explorer/${anime.mal_id}`}
+            >
               See Details
-            </button>
-            <button className=' btn btn-secondary'>Trailer</button>
+            </Link>
+            <Link
+              className='py-2 px-3 font-bold rounded-lg bg-base-100 border border-solid border-teal-400/50  text-gray-100 hover:bg-teal-400 transition-all duration-300 ease-in-out'
+              href={``}
+            >
+              Trailer
+            </Link>
           </div>
         </li>
       ))}

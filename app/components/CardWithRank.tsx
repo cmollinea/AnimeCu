@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Stars from './Stars';
 import { TopAnime } from '@/types/top10';
 import Link from 'next/link';
+import { StarIcon } from '@heroicons/react/24/solid';
 
 function CardWithRank({ anime }: { anime: TopAnime }) {
   return (
@@ -33,7 +34,11 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
             ? 'rd'
             : 'th'}{' '}
         </p>
-        <Stars rating={anime.score} />
+        <span className='flex items-center gap-1 text-gray-200'>
+          {/* <StarIcon className='fill-teal-400 w-4' />
+          {anime.score} */}
+          <Stars rating={anime.score} />
+        </span>
         <h2 className='text-xl font-bold pb-4 truncate group-hover:text-teal-400 transition-all duration-300 ease-in-out'>
           {anime.title}
         </h2>

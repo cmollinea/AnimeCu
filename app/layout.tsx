@@ -4,6 +4,7 @@ import { Inter, Roboto } from 'next/font/google';
 import Link from 'next/link';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 // const roboto = Roboto({
 //   subsets: ['latin'],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`text-gray-300 overflow-x-hidden`}>
         <NavBar />
         <main className='min-h-screen relative'>{children}</main>
+        <Footer />
       </body>
     </html>
   );
