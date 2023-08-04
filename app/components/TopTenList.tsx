@@ -5,6 +5,9 @@ import Link from 'next/link';
 import CardWithRank from './CardWithRank';
 import { TopAnime } from '@/types/top10';
 
+//Hacer una llama a la api
+//buscar el top ranking con un limit en 10
+
 function TopTenList() {
   return (
     <>

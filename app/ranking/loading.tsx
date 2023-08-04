@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Ball() {
-  return <div className='loading loading-ring loading-lg'></div>;
+  return (
+    <section className='min-h-screen flex place-content-center items-center'>
+      <div className='loading loading-ring loading-lg text-teal-400'></div>
+    </section>
+  );
 }
 
 export default Ball;

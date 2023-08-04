@@ -1,9 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import BasicCard from './BasicCard';
 import upcoming from '../mocks/upcoming.json';
 import { UpcomingAnime } from '@/types/upcoming';
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
+
+//Hacer llamada a la api
+//traer los proximos estrenaos mas
+// esperados
 
 function UpcomingList() {
   return (
