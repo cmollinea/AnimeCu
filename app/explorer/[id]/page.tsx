@@ -4,6 +4,8 @@ import FirstDivition from './components/FirstDivition';
 import { AnimeInfo } from '@/types/animeInfo';
 import SecondDivition from './components/SecondDivition';
 import { StarIcon } from '@heroicons/react/24/solid';
+import Divider from '@/app/components/Divider';
+import MainCharacters from './components/MainCharacters';
 
 export const metadata: Metadata = {
   title: `AnimeCU | ${OneAnimeInfo.data.title} `
@@ -29,10 +31,12 @@ function AnimeInfo({ params }: { params: { id: string } }) {
           </span>
         </h1>
       </div>
-      <section className='grid lg:grid-cols-3 max-lg:items-center max-lg:gap-10 max-lg:px-16 max-lg:justify-center px-16 pb-20'>
+      <section className='grid lg:grid-cols-3 max-lg:items-center max-lg:gap-10 max-lg:px-16 max-lg:justify-center px-16 pb-10'>
         <FirstDivition anime={OneAnimeInfo.data as AnimeInfo} />
         <SecondDivition anime={OneAnimeInfo.data as AnimeInfo} />
       </section>
+      <Divider />
+      <MainCharacters />
     </>
   );
 }
