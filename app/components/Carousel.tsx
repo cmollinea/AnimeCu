@@ -1,6 +1,7 @@
 'use client';
 import Hero from './Hero';
 import ActualSeason from '../mocks/ActualSeason.json';
+import React from 'react';
 import { AnimeOnEmision } from '@/types/emision';
 
 const AnimeArr = ActualSeason.data.slice(0, 9);
