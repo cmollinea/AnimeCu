@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className='footer text-teal-400 p-10 bg-base-200'>
+    <footer className='footer text-teal-400 p-10 bg-base-200 rounded-t-lg'>
       <div>
         <div className='text-gray-300'>
           <Link className='text-3xl font-black' href='#'>
