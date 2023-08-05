@@ -6,6 +6,7 @@ import SecondDivition from './components/SecondDivition';
 import { StarIcon } from '@heroicons/react/24/solid';
 import Divider from '@/app/components/Divider';
 import MainCharacters from './components/MainCharacters';
+import DropDown from './components/DropDown';
 
 export const metadata: Metadata = {
   title: `AnimeCU | ${OneAnimeInfo.data.title} `
@@ -26,8 +27,8 @@ function AnimeInfo({ params }: { params: { id: string } }) {
           {OneAnimeInfo.data.title_japanese}
           <span className='divider divider-horizontal after:bg-base-300/80 before:bg-base-300/80 text-xs'></span>
           <span className='flex items-center gap-1 text-gray-200'>
-            <StarIcon className='fill-teal-400 w-8' />
             {OneAnimeInfo.data.score}
+            <StarIcon className='fill-teal-400 w-8' />
           </span>
         </h1>
       </div>
@@ -36,7 +37,11 @@ function AnimeInfo({ params }: { params: { id: string } }) {
         <SecondDivition anime={OneAnimeInfo.data as AnimeInfo} />
       </section>
       <Divider />
+      {/* Cambiar luego el nombre de este componente debido a que abarca los
+      Personajes pero tambien los Siyuus */}
       <MainCharacters />
+      <Divider />
+      <DropDown />
     </>
   );
 }
