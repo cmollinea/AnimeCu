@@ -1,7 +1,7 @@
 'use client';
 import Hero from './Hero';
 import ActualSeason from '../mocks/ActualSeason.json';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimeOnEmision } from '@/types/emision';
 
 const AnimeArr = ActualSeason.data.slice(0, 9);
@@ -12,11 +12,53 @@ const AnimeArr = ActualSeason.data.slice(0, 9);
 // y pasar como prop cada uno
 
 function Carousel() {
-  console.log(AnimeArr.length);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  useEffect(() => {
+    const sliderInterval = setInterval(() => {
+      if (currentSlide < AnimeArr.length - 1) {
+        console.log('Mayor que 4');
+        setCurrentSlide((prev) => prev + 1);
+      } else {
+        console.log('Menor que 4');
+        setCurrentSlide(0);
+      }
+    }, 5000);
+    return () => clearInterval(sliderInterval);
+  }, [currentSlide]);
 
   return (
     <>
-      <div className='carousel w-full'>
+      <section className='flex flex-col justify-center items-center transition-all duration-300 w-[90%]'>
+        {currentSlide === 0 && <Hero anime={AnimeArr[0] as AnimeOnEmision} />}
+        {currentSlide === 1 && <Hero anime={AnimeArr[1] as AnimeOnEmision} />}
+        {currentSlide === 2 && <Hero anime={AnimeArr[2] as AnimeOnEmision} />}
+        {currentSlide === 3 && <Hero anime={AnimeArr[3] as AnimeOnEmision} />}
+        {currentSlide === 4 && <Hero anime={AnimeArr[4] as AnimeOnEmision} />}
+        {currentSlide === 5 && <Hero anime={AnimeArr[5] as AnimeOnEmision} />}
+        {currentSlide === 6 && <Hero anime={AnimeArr[6] as AnimeOnEmision} />}
+        {currentSlide === 7 && <Hero anime={AnimeArr[7] as AnimeOnEmision} />}
+        {currentSlide === 8 && <Hero anime={AnimeArr[8] as AnimeOnEmision} />}
+        {currentSlide === 9 && <Hero anime={AnimeArr[9] as AnimeOnEmision} />}
+      </section>
+      <div className='flex gap-2'>
+        {AnimeArr.map((slide, index) => (
+          <div
+            key={index}
+            className={`h-4 w-4 bg-base-300/50 rounded-full transition-all duration-1000 cursor-pointer ${
+              currentSlide === index && 'bg-teal-400'
+            }`}
+            onClick={() => setCurrentSlide(index)}
+          ></div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+export default Carousel;
+
+{
+  /* <div className='carousel w-full'>
         <div id='item1' className='carousel-item w-full'>
           <Hero anime={AnimeArr[0] as AnimeOnEmision} />{' '}
         </div>
@@ -58,9 +100,5 @@ function Carousel() {
             {index + 1}
           </a>
         ))}
-      </div>
-    </>
-  );
+      </div> */
 }
-
-export default Carousel;

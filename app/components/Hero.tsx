@@ -1,16 +1,16 @@
-import { Anime } from '@/types/emision';
+import { AnimeOnEmision } from '@/types/emision';
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 type Props = {
-  anime: Anime;
+  anime: AnimeOnEmision;
 };
 
 function Hero({ anime }: Props) {
   return (
-    <div className='hero min-h-fit py-6 w-[80%] mx-auto relative'>
+    <div className='hero fade-in opacity-0 h-[400px] py-6 mx-auto relative overflow-hidden transition-all duration-300 ease-in-out'>
       <div className='hero-content flex-col lg:flex-row'>
         <Image
           src={anime?.images.webp.large_image_url}

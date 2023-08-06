@@ -7,7 +7,7 @@ function ListOfEpisodes() {
       <table className='table'>
         {/* head */}
         <thead>
-          <tr>
+          <tr className='bg-base-300'>
             <th>#</th>
             <th>Title</th>
             <th>Aired</th>
@@ -16,8 +16,13 @@ function ListOfEpisodes() {
         </thead>
         <tbody>
           {/* row 1 */}
-          {EpisodesExample.data.map((episode) => (
-            <tr key={episode.mal_id} className='bg-base-200'>
+          {EpisodesExample.data.map((episode, index) => (
+            <tr
+              key={episode.mal_id}
+              className={`${
+                index % 2 === 0 ? 'bg-base-200' : 'bg-base-300'
+              } rounded-lg`}
+            >
               <th className='text-teal-400'>{episode.mal_id}</th>
               <td>
                 {episode.title} |
