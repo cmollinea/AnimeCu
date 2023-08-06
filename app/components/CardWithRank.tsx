@@ -9,7 +9,7 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
     <Link
       href={`/explorer/${anime.mal_id}`}
       key={anime.mal_id}
-      className='card card-side bg-base-100 shadow-x w-full h-[200px] border border-transparent cursor-pointer group hover:border-teal-400/20 transition-all duration-300 ease-in-out'
+      className='card card-side bg-base-100 shadow-x w-full h-[200px] border border-transparent cursor-pointer group hover:border-lime-400/20 transition-all duration-300 ease-in-out'
       title={anime.title}
     >
       <figure className='w-[30%]'>
@@ -24,7 +24,7 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
       </figure>
 
       <div className='card-body w-[70%]'>
-        <p className='text-2xl h-fit font-black group-hover:text-teal-400 transition-all duration-300 ease-in-out'>
+        <p className='text-2xl h-fit font-black group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
           {anime.rank}
           {anime.rank === 1
             ? 'st'
@@ -35,11 +35,11 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
             : 'th'}{' '}
         </p>
         <span className='flex items-center gap-1 text-gray-200'>
-          {/* <StarIcon className='fill-teal-400 w-4' />
+          {/* <StarIcon className='fill-lime-400 w-4' />
           {anime.score} */}
           <Stars rating={anime.score} />
         </span>
-        <h2 className='text-xl font-bold pb-4 truncate group-hover:text-teal-400 transition-all duration-300 ease-in-out'>
+        <h2 className='text-xl font-bold pb-4 truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
           {anime.title}
         </h2>
         <ul className='flex gap-2 flex-wrap'>

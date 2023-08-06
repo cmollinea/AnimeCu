@@ -22,13 +22,13 @@ function PersonalRecomendations() {
           <p className='px-6'>{anime.background}</p>
           <div className='flex gap-4'>
             <Link
-              className=' py-2 px-3 font-bold rounded-lg bg-base-100 border border-solid border-teal-400/50  text-gray-100 hover:bg-teal-400 transition-all duration-300 ease-in-out'
+              className=' py-2 px-3 font-bold rounded-lg bg-base-100 border border-solid border-lime-400/50  text-gray-100 hover:bg-lime-400 hover:text-black transition-all duration-300 ease-in-out'
               href={`/explorer/${anime.mal_id}`}
             >
               See Details
             </Link>
             <Link
-              className='py-2 px-3 font-bold rounded-lg bg-base-100 border border-solid border-teal-400/50  text-gray-100 hover:bg-teal-400 transition-all duration-300 ease-in-out'
+              className='py-2 px-3 font-bold rounded-lg bg-base-100 border border-solid border-lime-400/50  text-gray-100 hover:bg-lime-400 hover:text-black transition-all duration-300 ease-in-out'
               href={``}
             >
               Trailer

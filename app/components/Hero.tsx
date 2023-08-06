@@ -25,7 +25,7 @@ function Hero({ anime }: Props) {
           </h1>
           <p className='py-6 max-sm:hidden'>{anime?.synopsis}</p>
           <Link
-            className='hover:text-teal-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute bottom-0 right-6'
+            className='hover:text-lime-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute bottom-0 right-6'
             href={''}
           >
             More Details

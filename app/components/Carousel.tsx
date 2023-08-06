@@ -29,6 +29,7 @@ function Carousel() {
   return (
     <>
       <section className='flex flex-col justify-center items-center transition-all duration-300 w-[90%]'>
+        {/* Tuve que ser repetitivo para poder tener el efecto fade in */}
         {currentSlide === 0 && <Hero anime={AnimeArr[0] as AnimeOnEmision} />}
         {currentSlide === 1 && <Hero anime={AnimeArr[1] as AnimeOnEmision} />}
         {currentSlide === 2 && <Hero anime={AnimeArr[2] as AnimeOnEmision} />}
@@ -44,7 +45,7 @@ function Carousel() {
         {AnimeArr.map((slide, index) => (
           <div
             key={index}
-            className={`h-4 w-4 bg-base-300/50 rounded-full transition-all duration-1000 cursor-pointer ${
+            className={`h-2 w-2 bg-base-300/50 rounded-full transition-all duration-500 cursor-pointer hover:bg-teal-400/50 ${
               currentSlide === index && 'bg-teal-400'
             }`}
             onClick={() => setCurrentSlide(index)}
@@ -56,6 +57,8 @@ function Carousel() {
 }
 
 export default Carousel;
+
+// Old Way
 
 {
   /* <div className='carousel w-full'>

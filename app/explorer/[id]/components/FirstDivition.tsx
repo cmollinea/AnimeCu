@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 function FirstDivition({ anime }: { anime: AnimeInfo }) {
   return (
-    <div className='flex flex-col gap-4 text-sm font-bold w-fit'>
+    <div className='flex flex-col gap-4 text-sm font-bold w-fit text-gray-400'>
       <Image
         src={anime.images.webp.large_image_url}
         alt={anime.title_japanese}

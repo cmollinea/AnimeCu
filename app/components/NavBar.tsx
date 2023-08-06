@@ -30,7 +30,7 @@ const NavBar = () => {
           >
             <li>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-teal-400 transition-all group'
+                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/'
               >
                 Home{' '}
@@ -39,7 +39,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-teal-400 transition-all group'
+                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/explorer'
               >
                 Explorer{' '}
@@ -48,7 +48,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-teal-400 transition-all group'
+                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/ranking'
               >
                 Ranking{' '}
@@ -57,7 +57,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-teal-400 transition-all group'
+                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/manga'
               >
                 Manga{' '}
@@ -66,7 +66,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-teal-400 transition-all group'
+                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/dev'
               >
                 Dev
@@ -78,7 +78,7 @@ const NavBar = () => {
       </div>
       <div className='navbar-end text-gray-300'>
         <Link className='text-3xl font-black' href='#'>
-          Anime<span className='text-teal-400'>.CU</span>
+          Anime<span className='text-lime-400'>.CU</span>
         </Link>
       </div>
     </nav>

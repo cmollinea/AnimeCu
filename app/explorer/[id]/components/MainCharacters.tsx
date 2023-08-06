@@ -13,11 +13,11 @@ function MainCharacters() {
 
   return (
     <section className='py-2 grid place-content-center gap-10'>
-      <h2 className='lg:text-2xl text-lg font-bold text-teal-400 text-center pb-10'>
+      <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center pb-10'>
         Main Characters
       </h2>
       <CharacterCards characters={mainCharacters as Characters[]} />
-      <h2 className='lg:text-2xl text-lg font-bold text-teal-400 text-center'>
+      <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center'>
         Seiyuus
       </h2>
       <SeiyuuCards characters={mainCharacters as Characters[]} />

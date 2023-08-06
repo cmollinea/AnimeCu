@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 function Label({ children }: { children: ReactNode }) {
-  return <span className=' text-teal-400/30 font-normal'>{children}</span>;
+  return <span className=' text-lime-400/50 font-normal'>{children}</span>;
 }
 
 export default Label;

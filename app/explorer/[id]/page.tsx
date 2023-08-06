@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 function AnimeInfo({ params }: { params: { id: string } }) {
   return (
     <>
-      <div className='lg:w-full flex justify-center items-center py-10 text-xl lg:text-3xl font-bold gap-10'>
-        <h1 className=' text-teal-400 flex flex-wrap'>
+      <div className='lg:w-full flex justify-center items-center py-10 text-xl lg:text-3xl font-bold gap-10 text-gray-400/'>
+        <h1 className=' text-lime-400 flex flex-wrap'>
           {OneAnimeInfo.data.title}
           <span className='divider divider-horizontal after:bg-base-300/80 before:bg-base-300/80 text-xs'></span>
           {OneAnimeInfo.data.title_japanese}
           <span className='divider divider-horizontal after:bg-base-300/80 before:bg-base-300/80 text-xs'></span>
-          <span className='flex items-center gap-1 text-gray-200'>
+          <span className='flex items-center gap-1 text-gray-300'>
             {OneAnimeInfo.data.score}
-            <StarIcon className='fill-teal-400 w-8' />
+            <StarIcon className='fill-lime-400 w-8' />
           </span>
         </h1>
       </div>

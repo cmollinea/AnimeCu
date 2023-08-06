@@ -5,7 +5,7 @@ import { StarIcon } from '@heroicons/react/24/solid';
 
 function SecondDivition({ anime }: { anime: AnimeInfo }) {
   return (
-    <div className='font-semibold text-lg col-span-2'>
+    <div className='font-semibold text-lg col-span-2 text-gray-400'>
       <p className='flex flex-col gap-4'>
         <Label>Synopsis: </Label>
         <br />

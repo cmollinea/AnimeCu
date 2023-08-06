@@ -1,5 +1,5 @@
 import Carousel from './components/Carousel';
-import HomeSection from './components/HomeSection';
+import StyledSection from './components/StyledSection';
 import TopTenList from './components/TopTenList';
 import UpcomingList from './components/UpcomingList';
 import PersonalRecomendations from './components/PersonalRecomendations';
@@ -8,21 +8,21 @@ import Divider from './components/Divider';
 export default function Home() {
   return (
     <>
-      <HomeSection heading='Current Season.'>
+      <StyledSection heading='Current Season.'>
         <Carousel />
-      </HomeSection>
+      </StyledSection>
       <Divider />
-      <HomeSection heading='Top 10 Anime.'>
+      <StyledSection heading='Top 10 Anime.'>
         <TopTenList />
-      </HomeSection>
+      </StyledSection>
       <Divider />
-      <HomeSection heading='Upcoming Soon!'>
+      <StyledSection heading='Upcoming Soon!'>
         <UpcomingList />
-      </HomeSection>
+      </StyledSection>
       <Divider />
-      <HomeSection heading='Personal Recomendations.'>
+      <StyledSection heading='Personal Recomendations.'>
         <PersonalRecomendations />
-      </HomeSection>
+      </StyledSection>
     </>
   );
 }

@@ -19,7 +19,7 @@ function TopTenList() {
       </ul>
       <Link
         className='hover:text-teal-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute -bottom-8 right-6'
-        href={''}
+        href={'/ranking'}
       >
         Go to Rank Page
         <ChevronDoubleRightIcon className='w-5 mt-1 group-hover:translate-x-2 transition-all duration-300 ease-in-out' />

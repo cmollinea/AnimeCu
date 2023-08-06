@@ -23,15 +23,15 @@ function ListOfEpisodes() {
                 index % 2 === 0 ? 'bg-base-200' : 'bg-base-300'
               } rounded-lg`}
             >
-              <th className='text-teal-400'>{episode.mal_id}</th>
+              <th className='text-lime-400'>{episode.mal_id}</th>
               <td>
                 {episode.title} |
-                <span className='text-teal-400'> {episode.title_japanese}</span>
+                <span className='text-lime-400'> {episode.title_japanese}</span>
               </td>
               <td>{new Date(episode.aired).toLocaleString()}</td>
               <td className='flex items-center gap-1'>
                 {episode.score}
-                <StarIcon className='fill-teal-400 w-4' />
+                <StarIcon className='fill-lime-400 w-4' />
               </td>
             </tr>
           ))}
