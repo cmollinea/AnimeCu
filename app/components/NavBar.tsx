@@ -28,7 +28,7 @@ const NavBar = () => {
             tabIndex={0}
             className='max-sm:menu max-sm:menu-sm max-sm:dropdown-content max-sm:mt-3 max-sm:z-[1] max-sm:p-2 max-sm:shadow max-sm:bg-base-100 max-sm:rounded-box max-sm:bg-base-200/70 max-sm:backdrop-blur-lg w-52 flex px-4 gap-2'
           >
-            <li>
+            <span className=''>
               <Link
                 className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/'
@@ -36,8 +36,8 @@ const NavBar = () => {
                 Home{' '}
                 <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
-            </li>
-            <li>
+            </span>
+            <span className=''>
               <Link
                 className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/explorer'
@@ -45,8 +45,8 @@ const NavBar = () => {
                 Explorer{' '}
                 <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
-            </li>
-            <li>
+            </span>
+            <span className=''>
               <Link
                 className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/ranking'
@@ -54,8 +54,8 @@ const NavBar = () => {
                 Ranking{' '}
                 <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
-            </li>
-            <li>
+            </span>
+            <span className=''>
               <Link
                 className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/manga'
@@ -63,8 +63,8 @@ const NavBar = () => {
                 Manga{' '}
                 <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
-            </li>
-            <li>
+            </span>
+            <span className=''>
               <Link
                 className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
                 href='/dev'
@@ -72,7 +72,7 @@ const NavBar = () => {
                 Dev
                 <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
-            </li>
+            </span>
           </ul>
         </div>
       </div>

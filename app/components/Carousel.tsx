@@ -6,10 +6,7 @@ import { AnimeOnEmision } from '@/types/emision';
 
 const AnimeArr = ActualSeason.data.slice(0, 9);
 
-//Hacer una llamada a la APi con un limit de 10
-//para buscar los animes mas populares en emision o sea
-//de la temporada asignarlos a una variable el array
-// y pasar como prop cada uno
+//TODO Hacer una llamada a la APi con un limit de 10  para buscar los animes mas populares en emision o sea de la temporada asignarlos a una variable el array y pasar como prop cada uno
 
 function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,8 +42,8 @@ function Carousel() {
         {AnimeArr.map((slide, index) => (
           <div
             key={index}
-            className={`h-2 w-2 bg-base-300/50 rounded-full transition-all duration-500 cursor-pointer hover:bg-teal-400/50 ${
-              currentSlide === index && 'bg-teal-400'
+            className={`h-2 w-2 bg-base-300/50 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
+              currentSlide === index && 'bg-lime-400'
             }`}
             onClick={() => setCurrentSlide(index)}
           ></div>

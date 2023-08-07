@@ -14,40 +14,40 @@ function Footer() {
       </div>
       <div>
         <span className='footer-title'>Social</span>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           GitHub
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           Telegram
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           Twitter
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           LinkedIn
         </Link>
       </div>
       <div>
         <span className='footer-title'>Powered by</span>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           My Anime List
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           Jikan
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           NextJS
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           TailwindCSS
         </Link>
       </div>
       <div>
         <span className='footer-title'>Legal</span>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           Terms of use
         </Link>
-        <Link href={''} className='link link-hover'>
+        <Link href={''} className='link hover:underline link-hover'>
           Privacy policy
         </Link>
       </div>
