@@ -12,7 +12,7 @@ function MainCharacters() {
   const mainCharacters = characters.data.filter((char) => char.role === 'Main');
 
   return (
-    <section className='py-2 grid place-content-center gap-10'>
+    <section className='py-2 grid place-content-center gap-10 font-bold'>
       <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center pb-10'>
         Main Characters
       </h2>

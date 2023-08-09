@@ -18,7 +18,7 @@ function TopTenList() {
         ))}
       </ul>
       <Link
-        className='hover:text-lime-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute -bottom-8 right-6'
+        className='hover:text-lime-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute -bottom-6 right-6'
         href={'/ranking'}
       >
         Go to Rank Page

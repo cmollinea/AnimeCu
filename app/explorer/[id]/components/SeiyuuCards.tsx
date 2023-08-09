@@ -7,7 +7,7 @@ function SeiyuuCards({ characters }: { characters: Characters[] }) {
   );
 
   return (
-    <ul className='flex flex-wrap justify-around no-underline'>
+    <ul className='flex text-center flex-wrap justify-around gap-10 no-underline'>
       {voiceActors?.map((voiceActor) => (
         <li key={voiceActor?.person.mal_id} className='flex gap-6 h-fit mb-6'>
           <div>
@@ -16,6 +16,7 @@ function SeiyuuCards({ characters }: { characters: Characters[] }) {
               src={voiceActor?.person.images.jpg.image_url as string}
               height={150}
               width={150}
+              className='mask mask-squircle'
             />
             <p>{voiceActor?.person.name}</p>
           </div>

@@ -2,10 +2,14 @@ import StyledSection from '../components/StyledSection';
 import top from '@/app/mocks/top.json';
 import { TopAnime } from '@/types/top10';
 import CardWithRank from '../components/CardWithRank';
-import Link from 'next/link';
-import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid';
+import { Metadata } from 'next';
 
-function RankingPage() {
+export const metadata: Metadata = {
+  title: 'AnimeCU | Ranking',
+  description: 'An anime ranking by score'
+};
+
+async function RankingPage() {
   return (
     <StyledSection heading='Anime Ranking'>
       Here goes a pagination

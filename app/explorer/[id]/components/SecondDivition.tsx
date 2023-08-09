@@ -16,13 +16,13 @@ function SecondDivition({ anime }: { anime: AnimeInfo }) {
       <div className='grid gap-10 lg:grid-cols-2 justify-around'>
         <ul className='grid text-sm'>
           <Label>Openings</Label>{' '}
-          {anime.theme.openings.map((opening) => (
+          {anime.theme?.openings.map((opening) => (
             <li key={opening}>{opening}</li>
           ))}
         </ul>
         <ul className='grid text-sm'>
           <Label>Endings:</Label>
-          {anime.theme.endings.map((ending) => (
+          {anime.theme?.endings.map((ending) => (
             <li key={ending}>{ending}</li>
           ))}
         </ul>

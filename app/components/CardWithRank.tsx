@@ -18,7 +18,7 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
           fill
           src={anime.images.webp.large_image_url}
           alt={anime.title}
-          className='max-sm:h-48 max:sm:w-32 w-full h-full rounded-lg shadow-2xl border border-gray-100/5 group-hover:scale-110 transition-all duration-300 ease-in-out'
+          className='max-sm:h-48 max:sm:w-32 w-full h-full shadow-2xl border border-gray-100/5 group-hover:scale-110 transition-all duration-300 ease-in-out'
         />
       </figure>
 

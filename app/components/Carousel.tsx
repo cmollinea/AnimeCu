@@ -42,8 +42,8 @@ function Carousel() {
         {AnimeArr.map((slide, index) => (
           <div
             key={index}
-            className={`h-2 w-2 bg-base-300/50 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
-              currentSlide === index && 'bg-lime-400'
+            className={`h-2 w-2 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
+              currentSlide === index ? 'bg-lime-400' : 'bg-base-300/80'
             }`}
             onClick={() => setCurrentSlide(index)}
           ></div>
