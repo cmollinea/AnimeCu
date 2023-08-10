@@ -1,9 +1,22 @@
-import EpisodesExample from '@/app/mocks/EpisodesExample.json';
+'use client';
+import { getData } from '@/app/services/getData';
+import { EpisodesResponse } from '@/types/episodes';
 import { StarIcon } from '@heroicons/react/24/solid';
+import { useParams } from 'next/navigation';
+import { useQuery } from 'react-query';
 
 function ListOfEpisodes() {
+  const params = useParams();
+  const id = params.id;
+  const { data, isError, isLoading } = useQuery(['Anime Episodes', id], () =>
+    getData<EpisodesResponse>(`https://api.jikan.moe/v4/anime/${id}/episodes`)
+  );
+
+  const episodes = data;
+
   return (
     <div className='overflow-x-auto'>
+      {id}
       <table className='table'>
         {/* head */}
         <thead>
@@ -16,7 +29,7 @@ function ListOfEpisodes() {
         </thead>
         <tbody>
           {/* row 1 */}
-          {EpisodesExample.data.map((episode, index) => (
+          {episodes?.data.map((episode, index) => (
             <tr
               key={episode.mal_id}
               className={`${

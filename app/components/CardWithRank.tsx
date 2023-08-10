@@ -44,7 +44,7 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
         <ul className='flex gap-2 flex-wrap'>
           {anime.genres.map((genre) => (
             <li
-              className=' badge-primary badge-lg rounded-lg font-light bg-base-300 text-gray-200'
+              className=' badge-primary flex items-center text-xs badge-lg rounded-lg font-semibold  bg-base-300 text-gray-200'
               key={genre.mal_id}
             >
               {genre.name}

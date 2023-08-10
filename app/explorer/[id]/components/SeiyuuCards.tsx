@@ -2,7 +2,7 @@ import { Characters } from '@/types/characters';
 import Image from 'next/image';
 
 function SeiyuuCards({ characters }: { characters: Characters[] }) {
-  const voiceActors = characters.map((character) =>
+  const voiceActors = characters?.map((character) =>
     character.voice_actors.find((actor) => actor.language === 'Japanese')
   );
 

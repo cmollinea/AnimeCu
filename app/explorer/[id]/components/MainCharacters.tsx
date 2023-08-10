@@ -1,15 +1,19 @@
-import characters from '@/app/mocks/characters.json';
-import Image from 'next/image';
-import { VoiceActor, Characters } from '@/types/characters';
+import { Characters } from '@/types/characters';
 import CharacterCards from './CharacterCards';
 import SeiyuuCards from './SeiyuuCards';
+import { getData } from '@/app/services/getData';
 
-// Aqui usar el param id
-// para hacer fetch a los caracteres
-// y asi tener los datos
+type Props = {
+  params: {
+    id: string;
+  };
+};
 
-function MainCharacters() {
-  const mainCharacters = characters.data.filter((char) => char.role === 'Main');
+async function MainCharacters({ params }: Props) {
+  const characters = await getData<Characters>('the url');
+  const mainCharacters = characters?.data.filter(
+    (char) => char.role === 'Main'
+  );
 
   return (
     <section className='py-2 grid place-content-center gap-10 font-bold'>

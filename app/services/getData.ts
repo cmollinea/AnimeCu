@@ -1,4 +1,4 @@
-export async function getData<T>(url: string): Promise<T | undefined> {
+export async function getData<TData>(url: string): Promise<TData | undefined> {
   try {
     const response = await fetch(url);
     if (!response.ok) {

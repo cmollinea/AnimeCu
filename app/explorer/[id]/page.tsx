@@ -51,7 +51,7 @@ async function AnimeInfo({ params }: Props) {
       <Divider />
       {/* Cambiar luego el nombre de este componente debido a que abarca los
       Personajes pero tambien los Siyuus */}
-      <MainCharacters />
+      <MainCharacters params={params} />
       <Divider />
       <DropDown />
     </>
