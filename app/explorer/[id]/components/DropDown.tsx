@@ -1,6 +1,6 @@
 'use client';
 import ListOfEpisodes from './ListOfEpisodes';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
@@ -9,16 +9,19 @@ function DropDown() {
     <QueryClientProvider client={queryClient}>
       <section className='p-10 '>
         <div
-          tabIndex={0}
-          className='collapse collapse-arrow border border-base-300 bg-base-200 '
+          className='tooltip w-full before:bg-base-300 before:font-bold before:text-gray-400 rounded-2xl'
+          data-tip='Click me to show/hide list of episodes'
         >
-          <div className='collapse-title text-xl font-medium'>
-            <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center'>
-              List of Episodes
-            </h2>
-          </div>
-          <div className='collapse-content overflow-x-auto'>
-            <ListOfEpisodes />
+          <div className='collapse bg-base-200'>
+            <input type='checkbox' />
+            <div className='collapse-title text-xl font-medium'>
+              <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center'>
+                List of Episodes
+              </h2>
+            </div>
+            <div className='collapse-content'>
+              <ListOfEpisodes />
+            </div>
           </div>
         </div>
       </section>

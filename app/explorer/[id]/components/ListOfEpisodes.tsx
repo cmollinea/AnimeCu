@@ -3,7 +3,7 @@ import { getData } from '@/app/services/getData';
 import { EpisodesResponse } from '@/types/episodes';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useParams } from 'next/navigation';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 function ListOfEpisodes() {
   const params = useParams();
@@ -16,7 +16,6 @@ function ListOfEpisodes() {
 
   return (
     <div className='overflow-x-auto'>
-      {id}
       <table className='table'>
         {/* head */}
         <thead>

@@ -2,6 +2,7 @@ import { Characters } from '@/types/characters';
 import CharacterCards from './CharacterCards';
 import SeiyuuCards from './SeiyuuCards';
 import { getData } from '@/app/services/getData';
+import Divider from '@/app/components/Divider';
 
 type Props = {
   params: {
@@ -10,22 +11,32 @@ type Props = {
 };
 
 async function MainCharacters({ params }: Props) {
-  const characters = await getData<Characters>('the url');
+  const characters = await getData<Characters>(
+    `https://api.jikan.moe/v4/anime/${params.id}/characters`
+  );
   const mainCharacters = characters?.data.filter(
     (char) => char.role === 'Main'
   );
 
   return (
-    <section className='py-2 grid place-content-center gap-10 font-bold'>
-      <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center pb-10'>
-        Main Characters
-      </h2>
-      <CharacterCards characters={mainCharacters as Characters[]} />
-      <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center'>
-        Seiyuus
-      </h2>
-      <SeiyuuCards characters={mainCharacters as Characters[]} />
-    </section>
+    <>
+      {mainCharacters ? (
+        <>
+          {' '}
+          <Divider />
+          <section className='py-2 grid  gap-4'>
+            <h2 className='lg:text-lg text-md font-bold text-lime-400 text-center'>
+              Main Characters
+            </h2>
+            <CharacterCards characters={mainCharacters} />
+            <h2 className='lg:text-lg text-md font-bold text-lime-400 text-center'>
+              Seiyuus
+            </h2>
+            <SeiyuuCards characters={mainCharacters} />
+          </section>
+        </>
+      ) : null}
+    </>
   );
 }
 

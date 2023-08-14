@@ -3,8 +3,6 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
 // const roboto = Roboto({
 //   subsets: ['latin'],
 //   weight: ['100', '300', '400', '500', '700', '900']

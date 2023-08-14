@@ -1,6 +1,6 @@
 'use client';
 import StyledSection from '../components/StyledSection';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { Metadata } from 'next';
 import ListContainer from './components/ListContainer';

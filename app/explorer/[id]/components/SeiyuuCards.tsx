@@ -1,13 +1,13 @@
 import { Characters } from '@/types/characters';
 import Image from 'next/image';
 
-function SeiyuuCards({ characters }: { characters: Characters[] }) {
+function SeiyuuCards({ characters }: { characters?: Characters[] }) {
   const voiceActors = characters?.map((character) =>
     character.voice_actors.find((actor) => actor.language === 'Japanese')
   );
 
   return (
-    <ul className='flex text-center flex-wrap justify-around gap-10 no-underline'>
+    <ul className='flex text-center flex-wrap gap-10 no-underline'>
       {voiceActors?.map((voiceActor) => (
         <li key={voiceActor?.person.mal_id} className='flex gap-6 h-fit mb-6'>
           <div>

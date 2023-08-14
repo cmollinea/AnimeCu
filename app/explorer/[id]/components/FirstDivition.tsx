@@ -7,7 +7,7 @@ function FirstDivition({ anime }: { anime: AnimeInfo }) {
   console.log(anime);
 
   return (
-    <div className='flex flex-col gap-4 text-sm font-bold w-fit text-gray-400'>
+    <div className='flex flex-col gap-4 text-sm font-bold w-full text-gray-400'>
       <Image
         src={anime.images.webp.large_image_url}
         alt={anime.title_japanese}

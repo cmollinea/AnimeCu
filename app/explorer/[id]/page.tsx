@@ -7,6 +7,7 @@ import Divider from '@/app/components/Divider';
 import MainCharacters from './components/MainCharacters';
 import DropDown from './components/DropDown';
 import { getAnimeFullInfo } from './services/getAnimeFullInfo';
+import Label from '@/app/components/Label';
 
 type Props = {
   params: {
@@ -39,19 +40,15 @@ async function AnimeInfo({ params }: Props) {
           </span>
         </h1>
       </div>
-      <section className='grid lg:grid-cols-3 max-lg:items-center max-lg:gap-10 max-lg:px-16 max-lg:justify-center px-16 pb-10'>
+      <section className='grid lg:grid-cols-3 max-lg:items-center max-lg:gap-10 max-lg:px-8 max-lg:justify-center px-16 pb-10'>
         {anime && (
           <>
             {' '}
             <FirstDivition anime={anime as AnimeInfo} />
-            <SecondDivition anime={anime as AnimeInfo} />
+            <SecondDivition anime={anime as AnimeInfo} params={params} />
           </>
         )}
       </section>
-      <Divider />
-      {/* Cambiar luego el nombre de este componente debido a que abarca los
-      Personajes pero tambien los Siyuus */}
-      <MainCharacters params={params} />
       <Divider />
       <DropDown />
     </>
