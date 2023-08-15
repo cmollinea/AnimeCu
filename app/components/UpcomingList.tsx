@@ -4,15 +4,19 @@ import upcoming from '../mocks/upcoming.json';
 import { UpcomingAnime } from '@/types/upcoming';
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
 
+type Props = {
+  upcomingsAnimes: UpcomingAnime[];
+};
+
 //Hacer llamada a la api
 //traer los proximos estrenaos mas
 // esperados
 
-function UpcomingList() {
+function UpcomingList({ upcomingsAnimes }: Props) {
   return (
     <>
       <ul className='flex flex-wrap p-10 gap-6 justify-center'>
-        {upcoming.data.map((anime) => (
+        {upcomingsAnimes.map((anime) => (
           <BasicCard key={anime.mal_id} anime={anime as UpcomingAnime} />
         ))}
       </ul>

@@ -4,8 +4,6 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 
 function FirstDivition({ anime }: { anime: AnimeInfo }) {
-  console.log(anime);
-
   return (
     <div className='flex flex-col gap-4 text-sm font-bold w-full text-gray-400'>
       <Image
