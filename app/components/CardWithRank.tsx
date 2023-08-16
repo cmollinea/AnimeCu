@@ -38,13 +38,13 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
           {anime.score} */}
           <Stars rating={anime.score} />
         </span>
-        <h2 className='text-xl font-bold pb-4 truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
+        <h2 className='text-xl font-bold pb-8 truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
           {anime.title}
         </h2>
         <ul className='flex gap-2 flex-wrap'>
           {anime.genres.map((genre) => (
             <li
-              className=' badge-primary flex items-center text-xs badge-lg rounded-lg font-semibold  bg-base-300 text-gray-200'
+              className=' badge-primary flex items-center text-xs badge-sm rounded-lg font-semibold  bg-base-300 text-gray-200'
               key={genre.mal_id}
             >
               {genre.name}

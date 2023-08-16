@@ -69,7 +69,7 @@ function FirstDivition({ anime }: { anime: AnimeInfo }) {
         <Label>Popularity: </Label>
         {anime.popularity}
       </p>
-      <div className='flex gap-2'>
+      <div className='flex flex-wrap gap-2'>
         <Label>Streaming: </Label>
         {anime.streaming.map((plataform) => (
           <a

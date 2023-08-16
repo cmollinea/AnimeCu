@@ -10,12 +10,15 @@ type Props = {
 
 function Pagination({ lastPage = 1 }: Props) {
   const searchParams = useSearchParams();
+  const DANGEROUS_GOOD_TYPED_SEARCH_PARAMS: unknown = useSearchParams();
   const pathname = usePathname();
   const page = searchParams.get('page') || '1';
 
   const prevPage = () => {
     if (Number(page) > 1) {
-      const newSearchParams = new URLSearchParams();
+      const newSearchParams = new URLSearchParams(
+        DANGEROUS_GOOD_TYPED_SEARCH_PARAMS as URLSearchParams
+      );
       newSearchParams.set('page', (Number(page) - 1).toString());
       return newSearchParams.toString();
     }
@@ -23,7 +26,9 @@ function Pagination({ lastPage = 1 }: Props) {
 
   const nextPage = () => {
     if (Number(page) < lastPage) {
-      const newSearchParams = new URLSearchParams();
+      const newSearchParams = new URLSearchParams(
+        DANGEROUS_GOOD_TYPED_SEARCH_PARAMS as URLSearchParams
+      );
       newSearchParams.set('page', (Number(page) + 1).toString());
       return newSearchParams.toString();
     }

@@ -16,7 +16,10 @@ export const metadata: Metadata = {
 };
 
 async function RankingPage({ searchParams }: Props) {
-  const data = await getData<Top>('Here goes the url');
+  const page = searchParams.page ? searchParams.page : '1';
+  const data = await getData<Top>(
+    `https://api.jikan.moe/v4/top/anime?limit=20&page=${page}`
+  );
   return (
     <StyledSection heading='Anime Ranking'>
       <ListContainer data={data} />

@@ -13,9 +13,17 @@ const revalidation = 2592000;
 
 export default async function Home() {
   //todo Passing the url and type fot implement ISR
-  const airing = await getData<ActualSeason>('The URL', revalidation);
-  const top10 = await getData<Top>('The URL', revalidation);
-  const upcoming = await getData<Upcoming>('The URL', revalidation);
+  const airing = await getData<ActualSeason>(
+    'https://api.jikan.moe/v4/top/anime?limit=10&type=tv&filter=airing',
+    revalidation
+  );
+  const top10 = await getData<Top>(
+    'https://api.jikan.moe/v4/top/anime?limit=10&type=tv'
+  );
+  const upcoming = await getData<Upcoming>(
+    'https://api.jikan.moe/v4/top/anime?filter=upcoming',
+    revalidation
+  );
 
   //todo pass as prop the results
   return (

@@ -7,7 +7,10 @@ type Props = {
 };
 
 function ListContainer({ data }: Props) {
-  const lastPage = data?.pagination.last_visible_page;
+  const lastPage = data?.pagination?.last_visible_page;
+  const sortedAnime = data?.data.sort(
+    (data1, data2) => data1.rank - data2.rank
+  );
 
   return (
     <>
@@ -15,7 +18,7 @@ function ListContainer({ data }: Props) {
         <>
           <Pagination lastPage={lastPage} />
           <ul className='grid lg:grid-cols-2 sm:justify-center sm:items-center gap-20 sm:gap-5 sm:py-10 sm:px-24'>
-            {data.data?.map((anime) => (
+            {sortedAnime?.map((anime) => (
               <CardWithRank key={anime.mal_id} anime={anime as TopAnime} />
             ))}
           </ul>

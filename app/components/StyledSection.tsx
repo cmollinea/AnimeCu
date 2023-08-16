@@ -9,7 +9,7 @@ export default function HomeSection({
   heading: string;
 }) {
   return (
-    <section className='min-h-screen flex flex-col items-center relative'>
+    <section className='min-h-screen flex flex-col items-center relative w-full'>
       <h1 className='text-4xl text-center font-black w-full pt-10 text-lime-400'>
         {heading}
       </h1>
