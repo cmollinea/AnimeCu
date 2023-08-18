@@ -42,7 +42,7 @@ function FirstDivition({ anime }: { anime: AnimeInfo }) {
         <Label>Genres: </Label> <br />
         {anime.genres.map((genre) => (
           <li
-            className=' badge-primary badge-lg rounded-lg font-light bg-base-300 text-gray-200'
+            className=' badge-primary flex items-center text-xs badge-sm rounded-lg font-semibold bg-base-300 text-gray-200'
             key={genre.mal_id}
           >
             {genre.name}
@@ -54,7 +54,7 @@ function FirstDivition({ anime }: { anime: AnimeInfo }) {
         <br />
         {anime.producers.map((producer) => (
           <li
-            className=' badge-primary badge-lg rounded-lg font-light bg-base-300 text-gray-200'
+            className=' badge-primary flex items-center text-xs badge-sm rounded-lg font-semibold  bg-base-300 text-gray-200'
             key={producer.mal_id}
           >
             {producer.name}

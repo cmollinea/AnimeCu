@@ -12,13 +12,12 @@ export const STATUS = {
   publishing: 'publishing',
   complete: 'complete',
   hiatus: 'hiatus',
-  discontinued: 'discontinued',
-  upcoming: 'upcoming'
+  discontinued: 'discontinued'
 };
 
 export const ORDER_BY = {
   rank: 'rank',
-  id: 'id',
+  mal_id: 'mal_id',
   title: 'title',
   score: 'score',
   popularity: 'popularity'

@@ -11,6 +11,8 @@ type Props = {
     page: string;
     status: string;
     order_by: string;
+    type: string;
+    query: string;
   };
 };
 
@@ -23,27 +25,48 @@ async function MangaRoute({ searchParams }: Props) {
   const page = searchParams?.page || '1';
   const status = searchParams?.status || 'publishing';
   const order_by = searchParams?.order_by || 'rank';
-  const data = await getData<MangaResponse>(
-    `https://api.jikan.moe/v4/manga?sfw&page=${page}&status=${status}&order_by=${order_by}&min_score=6&genres_exclude=4,8,12,49,64`
-  );
-  console.log(
-    `https://api.jikan.moe/v4/manga?sfw&page=${page}&status=${status}&order_by=${order_by}&min_score=6&genres_exclude=4,8,12,49,64`
-  );
+  const type = searchParams?.type || 'manga';
+  const query = searchParams?.query;
+  let URL = `https://api.jikan.moe/v4/manga?sfw&page=${page}&status=${status}&order_by=${order_by}&type=${type}&min_score=4&genres_exclude=4,8,12,49,64`;
+
+  if (order_by === 'score' && !query) {
+    URL += '&sort=desc';
+  }
+
+  if (query && order_by !== 'score') {
+    URL += `&q=${query}`;
+  }
+
+  if (query && order_by === 'score') {
+    URL += `&sort=desc&q=${query}`;
+  }
+
+  console.log(URL);
+  let appStatus = 'loading';
+  const data = await getData<MangaResponse>(URL);
+  appStatus = 'sucess';
 
   return (
-    <section className='flex gap-10 relative h-full'>
-      <aside className='w-fit px-4 pt-10 sticky top-0'>
+    <section className='flex gap-10 h-full'>
+      {appStatus === 'loading' && <p>Loading</p>}
+      <aside className='w-fit px-4 py-8 h-fit sticky top-0'>
         <SearchOptions />
       </aside>
       <StyledSection heading='Manga Explorer'>
-        {typeof data !== 'undefined' ? (
-          <>
-            <Pagination lastPage={data.pagination.last_visible_page} />
-
-            <MangaContainer data={data} />
-          </>
+        {data?.data.length === 0 ? (
+          <p>No Data</p>
         ) : (
-          <p>No data</p>
+          <>
+            {typeof data !== 'undefined' ? (
+              <>
+                <Pagination lastPage={data.pagination?.last_visible_page} />
+                <MangaContainer data={data} />
+                <Pagination lastPage={data.pagination?.last_visible_page} />
+              </>
+            ) : (
+              <p>No data</p>
+            )}
+          </>
         )}
       </StyledSection>
     </section>

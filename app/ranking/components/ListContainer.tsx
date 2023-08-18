@@ -22,6 +22,7 @@ function ListContainer({ data }: Props) {
               <CardWithRank key={anime.mal_id} anime={anime as TopAnime} />
             ))}
           </ul>
+          <Pagination lastPage={lastPage} />
         </>
       ) : (
         <p>Error 500</p>

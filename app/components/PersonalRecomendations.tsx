@@ -27,7 +27,7 @@ function PersonalRecomendations() {
           <div className='flex justify-between'>
             <Link
               className='py-2 px-8 font-bold rounded-lg bg-base-100 border border-solid border-lime-400/50  text-gray-100 hover:bg-lime-400 hover:text-black transition-all duration-300 ease-in-out'
-              href={`/explorer/${anime.mal_id}`}
+              href={`/anime/${anime.mal_id}`}
             >
               See Details
             </Link>

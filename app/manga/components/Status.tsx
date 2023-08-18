@@ -47,11 +47,11 @@ function Status() {
   return (
     <>
       <h2 className='mt-8 pb-4 text-xs text-lime-400/60'>Status:</h2>
-      <div className='flex flex-wrap sm:flex-col gap-4'>
+      <div className='flex flex-wrap sm:flex-col gap-2'>
         {statusOptions.map((option) => (
           <button
             onClick={() => setStatus(option)}
-            className={`text-sm font-bold hover:bg-lime-400 hover:text-black transition-all duration-300 border border-lime-400 rounded-full cursor-pointer w-fit px-2 min-w-[50px] ${
+            className={`text-xs font-bold hover:bg-lime-400 hover:text-black transition-all duration-300 border border-lime-400 rounded-full cursor-pointer w-fit px-2 min-w-[50px] ${
               status === option ? 'bg-lime-400 text-black' : ''
             }`}
             key={option}

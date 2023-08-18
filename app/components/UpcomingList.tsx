@@ -22,7 +22,7 @@ function UpcomingList({ upcomingsAnimes }: Props) {
       </ul>
       <Link
         className='hover:text-lime-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute -bottom-6 right-6'
-        href={'/explorer'}
+        href={'/anime'}
       >
         Go to Explorer
         <ChevronDoubleRightIcon className='w-5 mt-1 group-hover:translate-x-2 transition-all duration-300 ease-in-out' />

@@ -9,7 +9,7 @@ function BasicCard({ anime }: { anime: UpcomingAnime }) {
       key={anime.mal_id}
       className='bg-base-100 p-2 rounded-lg border border-transparent shadow-x w-40 h-fit cursor-pointer group hover:border-lime-400/20 overflow-hidden transition-all duration-300 ease-in-out'
       title={anime.title}
-      href={`/explorer/${anime.mal_id}`}
+      href={`/anime/${anime.mal_id}`}
     >
       <div>
         {' '}
