@@ -26,29 +26,17 @@ async function MangaRoute({ searchParams }: Props) {
   const status = searchParams?.status || 'publishing';
   const order_by = searchParams?.order_by || 'rank';
   const type = searchParams?.type || 'manga';
-  const query = searchParams?.query;
-  let URL = `https://api.jikan.moe/v4/manga?sfw&page=${page}&status=${status}&order_by=${order_by}&type=${type}&min_score=4&genres_exclude=4,8,12,49,64`;
+  const query = searchParams?.query || '';
 
-  if (order_by === 'score' && !query) {
-    URL += '&sort=desc';
-  }
-
-  if (query && order_by !== 'score') {
-    URL += `&q=${query}`;
-  }
-
-  if (query && order_by === 'score') {
-    URL += `&sort=desc&q=${query}`;
-  }
-
+  const URL = `https://api.jikan.moe/v4/manga?sfw&page=${page}&status=${status}&order_by=${order_by}&type=${type}&min_score=4&genres_exclude=4,8,12,49,64&sort=${
+    order_by === 'score' ? 'desc' : 'asc'
+  }&q=${query}`;
   console.log(URL);
-  let appStatus = 'loading';
+
   const data = await getData<MangaResponse>(URL);
-  appStatus = 'sucess';
 
   return (
     <section className='flex gap-10 h-full'>
-      {appStatus === 'loading' && <p>Loading</p>}
       <aside className='w-fit px-4 py-8 h-fit sticky top-0'>
         <SearchOptions />
       </aside>

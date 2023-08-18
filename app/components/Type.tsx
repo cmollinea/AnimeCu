@@ -1,21 +1,26 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { ORDER_BY } from '../constants/searchOptions';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { AnimeType } from '@/types/anime_filters_types';
+import { MangaType } from '@/types/manga_filters_types';
 
-const statusOptions = Object.keys(ORDER_BY);
+type Props = {
+  filters: AnimeType | MangaType;
+};
 
-function OrderBy() {
+function Type({ filters }: Props) {
+  const typeOptions = useMemo(() => Object.values(filters), [filters]);
+
   const router = useRouter();
   let firstTime = useRef(true);
   const searchParams = useSearchParams();
-  const [status, setStatus] = useState(() => {
-    if (searchParams.get('order_by')) {
-      return searchParams.get('order_by') as string;
+  const [selectedType, setSelectedType] = useState(() => {
+    if (searchParams.get('type')) {
+      return searchParams.get('type') as string;
     } else {
-      return ORDER_BY.rank;
+      return filters.default;
     }
   });
   const DANGEROUS_GOOD_TYPED_SEARCH_PARAMS: unknown = useSearchParams();
@@ -28,7 +33,7 @@ function OrderBy() {
         DANGEROUS_GOOD_TYPED_SEARCH_PARAMS as URLSearchParams
       );
       newParam.delete('page');
-      newParam.set('order_by', value);
+      newParam.set('type', value);
       console.log(newParam);
 
       return newParam.toString();
@@ -38,31 +43,31 @@ function OrderBy() {
 
   useEffect(() => {
     if (!firstTime.current) {
-      router.push(pathname + '?' + searchParamHandler(status));
+      router.push(pathname + '?' + searchParamHandler(selectedType));
     } else {
       firstTime.current = false;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [status]);
+  }, [selectedType]);
 
   return (
     <>
       <h2 className='py-4 text-xs text-lime-400/60'>Order by:</h2>
 
       <div className='flex flex-wrap sm:flex-col gap-2'>
-        {statusOptions.map((option) => (
+        {typeOptions.map((type) => (
           <button
-            onClick={() => setStatus(option)}
+            onClick={() => setSelectedType(type)}
             className={`text-xs font-bold hover:bg-lime-400 hover:text-black transition-all duration-300 border border-lime-400 rounded-full min-w-[50px] cursor-pointer w-fit px-2 ${
-              status === option ? 'bg-lime-400 text-black' : ''
+              selectedType === type ? 'bg-lime-400 text-black' : ''
             }`}
-            key={option}
+            key={type}
           >
-            {option}
+            {type}
           </button>
         ))}
       </div>
     </>
   );
 }
-export default OrderBy;
+export default Type;

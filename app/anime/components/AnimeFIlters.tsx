@@ -3,9 +3,8 @@
 import OrderBy from '@/app/components/OrderBy';
 import Status from '@/app/components/Status';
 import Type from '@/app/components/Type';
-import { STATUS, ORDER_BY, TYPE } from '../constants/manga_filters';
-
-function SearchOptions() {
+import { STATUS, ORDER_BY, TYPE } from '../constant/anime_filters';
+function AnimeFilters() {
   return (
     <>
       <Status filters={STATUS} />
@@ -15,4 +14,4 @@ function SearchOptions() {
   );
 }
 
-export default SearchOptions;
+export default AnimeFilters;

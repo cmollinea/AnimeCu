@@ -1,5 +1,5 @@
 export const TYPE = {
-  manga: 'manga',
+  default: 'manga',
   novel: 'novel',
   lightnovel: 'lightnovel',
   oneshot: 'oneshot',
@@ -9,14 +9,14 @@ export const TYPE = {
 };
 
 export const STATUS = {
-  publishing: 'publishing',
+  default: 'publishing',
   complete: 'complete',
   hiatus: 'hiatus',
   discontinued: 'discontinued'
 };
 
 export const ORDER_BY = {
-  rank: 'rank',
+  default: 'rank',
   mal_id: 'mal_id',
   title: 'title',
   score: 'score',

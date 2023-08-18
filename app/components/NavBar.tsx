@@ -1,14 +1,16 @@
 'use client';
 import Link from 'next/link';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import {
   ArrowUpRightIcon,
   MagnifyingGlassIcon
 } from '@heroicons/react/24/solid';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import 'animate.css';
 
 const NavBar = () => {
   const pathname = usePathname();
+  const showSearch = pathname === '/anime' || pathname === '/manga';
   const searchParam = useSearchParams();
   const DANEROUS_GOOD_TYPED_SEARCH_PARAM: unknown = useSearchParams();
   const router = useRouter();
@@ -29,11 +31,12 @@ const NavBar = () => {
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    if (query) {
-      router.push(pathname + '?' + searchParamHandler(query));
-      setQuery('');
-    }
+    router.push(pathname + '?' + searchParamHandler(query));
   };
+
+  useEffect(() => {
+    setQuery('');
+  }, [pathname]);
 
   return (
     <nav className='navbar bg-base-200/70 backdrop-blur-lg sticky top-0 z-50 shadow-lg'>
@@ -107,22 +110,22 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      {pathname === '/manga' && (
-        <form
-          onSubmit={(e) => handleSearch(e)}
-          className='w-fit h-fit group relative mr-8'
-        >
-          <input
-            onChange={(e) => setQuery(e.target.value)}
-            value={query}
-            className='py-2 pl-1 w-40 lg:w-60 group rounded-lg border border-transparent focus:border-lime-400 ease-out transition-all duration-300 shadow-inner shadow-black outline-none placeholder:text-gray-400/50 placeholder:text-sm font-bold pr-8'
-            type='text'
-            placeholder='Search By Manga'
-          />
-          <MagnifyingGlassIcon className='w-6 absolute right-2 transition-all duration-300 ease-out group-focus-within:w-4 group-focus-within:text-lime-400' />
-        </form>
-      )}
       <div className='navbar-end text-gray-300'>
+        {showSearch && (
+          <form
+            onSubmit={(e) => handleSearch(e)}
+            className='w-fit h-fit group relative mr-8 animate__animated animate__bounceIn'
+          >
+            <input
+              onChange={(e) => setQuery(e.target.value)}
+              value={query}
+              className='py-2 pl-1 w-40 lg:w-60 group rounded-lg border border-transparent focus:border-lime-400 ease-out transition-all duration-300 shadow-inner shadow-black outline-none placeholder:text-gray-400/50 placeholder:text-xs pr-8'
+              type='text'
+              placeholder='Ex: Naruto, OnePiece, Dragon Ball'
+            />
+            <MagnifyingGlassIcon className='w-6 absolute right-2 top-3 transition-all text-gray-400/50 duration-300 ease-out group-focus-within:w-4 group-focus-within:text-lime-400' />
+          </form>
+        )}
         <Link className='text-3xl font-black' href='#'>
           Anime<span className='text-lime-400'>.CU</span>
         </Link>

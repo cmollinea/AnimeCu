@@ -1,13 +1,17 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { STATUS } from '../constants/searchOptions';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { MangaStatus } from '@/types/manga_filters_types';
+import { AnimeStatus } from '@/types/anime_filters_types';
 
-const statusOptions = Object.keys(STATUS);
+type Props = {
+  filters: MangaStatus | AnimeStatus;
+};
 
-function Status() {
+function Status({ filters }: Props) {
+  const statusOptions = useMemo(() => Object.values(filters), [filters]);
   const router = useRouter();
   let firstTime = useRef(true);
   const searchParams = useSearchParams();
@@ -16,7 +20,7 @@ function Status() {
     if (searchParams.get('status')) {
       return searchParams.get('status') as string;
     } else {
-      return STATUS.publishing;
+      return filters.default;
     }
   });
   const pathname = usePathname();
