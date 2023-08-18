@@ -13,11 +13,14 @@ type Props = {
 //buscar el top ranking con un limit en 10
 
 function TopTenList({ topAnimes }: Props) {
+  const sortedAnime = topAnimes.sort(
+    (anime1, anime2) => anime1.rank - anime2.rank
+  );
   return (
     <>
       {' '}
       <ul className='grid lg:grid-cols-2 justify-center items-center gap-5 py-10 px-24 w-full'>
-        {topAnimes.map((anime) => (
+        {sortedAnime.map((anime) => (
           <CardWithRank key={anime.mal_id} anime={anime as TopAnime} />
         ))}
       </ul>
