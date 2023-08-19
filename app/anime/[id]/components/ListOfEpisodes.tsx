@@ -1,6 +1,6 @@
 'use client';
 import { getData } from '@/app/services/getData';
-import { EpisodesResponse } from '@/types/episodes';
+import { EpisodesResponse } from '@/models/episodes.model';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useParams } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
