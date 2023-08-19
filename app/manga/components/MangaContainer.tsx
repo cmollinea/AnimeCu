@@ -1,4 +1,4 @@
-import { MangaResponse } from '@/types/mangaResponse';
+import { MangaResponse } from '@/models/manga_response.model';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -1,4 +1,4 @@
-import { Top, TopAnime } from '@/types/top10';
+import { Top, TopAnime } from '@/models/top_anime.model';
 import CardWithRank from '@/app/components/CardWithRank';
 import Pagination from '@/app/components/Pagination';
 

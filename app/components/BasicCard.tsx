@@ -1,5 +1,5 @@
 import React from 'react';
-import { UpcomingAnime } from '@/types/upcoming';
+import { UpcomingAnime } from '@/models/upcoming.model';
 import Image from 'next/image';
 import Link from 'next/link';
 

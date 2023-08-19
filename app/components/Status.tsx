@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { MangaStatus } from '@/types/manga_filters_types';
-import { AnimeStatus } from '@/types/anime_filters_types';
+import { MangaStatus } from '@/models/manga_filters.model';
+import { AnimeStatus } from '@/models/anime_filters.model';
 
 type Props = {
   filters: MangaStatus | AnimeStatus;

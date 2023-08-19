@@ -2,7 +2,7 @@ import Divider from '@/app/components/Divider';
 import Label from '@/app/components/Label';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import MainCharacters from './MainCharacters';
-import { Info } from '@/types/mangaFullInfo';
+import { Info } from '@/models/manga_full_info.model';
 
 function SecondDivition({
   manga,

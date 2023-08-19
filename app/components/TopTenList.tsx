@@ -3,7 +3,7 @@ import top from '@/app/mocks/top.json';
 import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import CardWithRank from './CardWithRank';
-import { TopAnime } from '@/types/top10';
+import { TopAnime } from '@/models/top_anime.model';
 
 type Props = {
   topAnimes: TopAnime[];

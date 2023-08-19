@@ -3,7 +3,7 @@ import { getData } from '../services/getData';
 import SearchOptions from './components/SearchOptions';
 import StyledSection from '../components/StyledSection';
 import MangaContainer from './components/MangaContainer';
-import { MangaResponse } from '@/types/mangaResponse';
+import { MangaResponse } from '@/models/manga_response.model';
 import Pagination from '../components/Pagination';
 
 type Props = {
@@ -47,12 +47,16 @@ async function MangaRoute({ searchParams }: Props) {
           <>
             {typeof data !== 'undefined' ? (
               <>
-                <Pagination lastPage={data.pagination?.last_visible_page} />
+                {data.pagination?.has_next_page && (
+                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                )}
                 <MangaContainer data={data} />
-                <Pagination lastPage={data.pagination?.last_visible_page} />
+                {data.pagination?.has_next_page && (
+                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                )}{' '}
               </>
             ) : (
-              <p>No data</p>
+              <p>An unknown error ocurred</p>
             )}
           </>
         )}

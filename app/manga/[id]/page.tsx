@@ -3,7 +3,7 @@ import FirstDivition from './components/FirstDivition';
 import SecondDivition from './components/SecondDivition';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { getData } from '@/app/services/getData';
-import { MangaInfo } from '@/types/mangaFullInfo';
+import { MangaInfo } from '@/models/manga_full_info.model';
 
 type Props = {
   params: {

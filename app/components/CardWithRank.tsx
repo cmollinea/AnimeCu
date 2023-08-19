@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Stars from './Stars';
-import { TopAnime } from '@/types/top10';
+import { TopAnime } from '@/models/top_anime.model';
 import Link from 'next/link';
 import { StarIcon } from '@heroicons/react/24/solid';
 
@@ -9,7 +9,7 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
     <Link
       href={`/anime/${anime.mal_id}`}
       key={anime.mal_id}
-      className='card card-side bg-base-100 shadow-x w-full h-[200px] border border-transparent cursor-pointer group hover:border-lime-400/20 transition-all duration-300 ease-in-out'
+      className='card card-side bg-base-100 shadow-x w-[350px] sm:w-full h-[160px] sm:h-[200px] border border-transparent cursor-pointer group hover:border-lime-400/20 transition-all duration-300 ease-in-out'
       title={anime.title}
     >
       <figure className='w-[30%] relative'>
@@ -22,8 +22,8 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
         />
       </figure>
 
-      <div className='card-body w-[70%]'>
-        <p className='text-2xl h-fit font-black group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
+      <div className='card-body max-sm:p-0 max-sm:pl-4 max-sm:py-6 w-[70%]'>
+        <p className='text-xl sm:text-2xl h-fit font-black group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
           {anime.rank}
           {anime.rank === 1
             ? 'st'
@@ -38,13 +38,13 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
           {anime.score} */}
           <Stars rating={anime.score} />
         </span>
-        <h2 className='text-xl font-bold pb-8 truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
+        <h2 className='text-lg sm:text-xl font-bold pb-8 truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out'>
           {anime.title}
         </h2>
         <ul className='flex gap-2 flex-wrap'>
           {anime.genres.map((genre) => (
             <li
-              className=' badge-primary flex items-center text-xs badge-sm rounded-lg font-semibold  bg-base-300 text-gray-200'
+              className=' badge-primary flex items-center max-sm:text-[10px] text-xs badge-sm rounded-lg font-semibold  bg-base-300 text-gray-200'
               key={genre.mal_id}
             >
               {genre.name}

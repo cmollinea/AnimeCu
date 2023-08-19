@@ -1,4 +1,4 @@
-import { Characters } from '@/types/characters';
+import { Characters } from '@/models/characters.model';
 import CharacterCards from './CharacterCards';
 import SeiyuuCards from './SeiyuuCards';
 import { getData } from '@/app/services/getData';

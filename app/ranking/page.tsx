@@ -2,7 +2,7 @@ import StyledSection from '../components/StyledSection';
 import { Metadata } from 'next';
 import ListContainer from './components/ListContainer';
 import { getData } from '../services/getData';
-import { Top } from '@/types/top10';
+import { Top } from '@/models/top_anime.model';
 
 type Props = {
   searchParams: {

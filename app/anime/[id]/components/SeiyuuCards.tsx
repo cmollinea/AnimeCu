@@ -1,4 +1,4 @@
-import { Characters } from '@/types/characters';
+import { Characters } from '@/models/characters.model';
 import Image from 'next/image';
 
 function SeiyuuCards({ characters }: { characters?: Characters[] }) {

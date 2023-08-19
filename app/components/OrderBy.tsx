@@ -3,8 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { AnimeOrderBy } from '@/types/anime_filters_types';
-import { MangaOrderBy } from '@/types/manga_filters_types';
+import { AnimeOrderBy } from '@/models/anime_filters.model';
+import { MangaOrderBy } from '@/models/manga_filters.model';
 
 type Props = {
   filters: AnimeOrderBy | MangaOrderBy;

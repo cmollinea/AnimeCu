@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import BasicCard from './BasicCard';
 import upcoming from '../mocks/upcoming.json';
-import { UpcomingAnime } from '@/types/upcoming';
+import { UpcomingAnime } from '@/models/upcoming.model';
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
 
 type Props = {

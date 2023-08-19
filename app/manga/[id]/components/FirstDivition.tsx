@@ -1,5 +1,5 @@
 import Label from '@/app/components/Label';
-import { Info } from '@/types/mangaFullInfo';
+import { Info } from '@/models/manga_full_info.model';
 import Image from 'next/image';
 
 function FirstDivition({ manga }: { manga: Info }) {

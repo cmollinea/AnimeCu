@@ -1,4 +1,4 @@
-import { AnimeInfo } from '@/types/animeInfo';
+import { AnimeInfo } from '@/models/anime_full_info.model';
 
 type Response = {
   // errorMessage: string | null;

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import FirstDivition from './components/FirstDivition';
-import { AnimeInfo } from '@/types/animeInfo';
+import { AnimeInfo } from '@/models/anime_full_info.model';
 import SecondDivition from './components/SecondDivition';
 import { StarIcon } from '@heroicons/react/24/solid';
 import Divider from '@/app/components/Divider';
@@ -40,7 +40,7 @@ async function AnimeInfo({ params }: Props) {
           </span>
         </h1>
       </div>
-      <section className='grid lg:grid-cols-3 max-lg:items-center max-lg:gap-10 max-lg:px-8 max-lg:justify-center px-16 pb-10'>
+      <section className='grid lg:grid-cols-3 max-lg:items-center max-lg:gap-10 gap-20 max-lg:px-8 max-lg:justify-center px-16 pb-10'>
         {anime && (
           <>
             {' '}

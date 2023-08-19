@@ -1,4 +1,4 @@
-import { Characters } from '@/types/characters';
+import { Characters } from '@/models/characters.model';
 import CharacterCards from './CharacterCards';
 import { getData } from '@/app/services/getData';
 import Divider from '@/app/components/Divider';

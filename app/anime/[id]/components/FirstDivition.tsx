@@ -1,5 +1,5 @@
 import Label from '@/app/components/Label';
-import { AnimeInfo } from '@/types/animeInfo';
+import { AnimeInfo } from '@/models/anime_full_info.model';
 import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 

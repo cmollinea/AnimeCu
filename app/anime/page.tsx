@@ -1,9 +1,10 @@
 import StyledSection from '@/app/components/StyledSection';
 import AnimeFilters from './components/AnimeFIlters';
 import { getData } from '../services/getData';
-import { AnimeResponse } from '@/types/animeResponse';
+import { AnimeResponse } from '@/models/anime_response.model';
 import Pagination from '../components/Pagination';
 import AnimeContainer from './components/AnimeContainer';
+import FilterModalButton from './components/FilterModalButton';
 
 type Props = {
   searchParams?: {
@@ -18,7 +19,7 @@ type Props = {
 async function Anime({ searchParams }: Props) {
   const page = searchParams?.page || '1';
   const status = searchParams?.status || 'complete';
-  const order_by = searchParams?.order_by || 'rank';
+  const order_by = searchParams?.order_by || 'mal_id';
   const type = searchParams?.type || 'tv';
   const query = searchParams?.query || '';
 
@@ -40,16 +41,21 @@ async function Anime({ searchParams }: Props) {
           <>
             {typeof data !== 'undefined' ? (
               <>
-                <Pagination lastPage={data.pagination?.last_visible_page} />
+                {data.pagination?.has_next_page && (
+                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                )}{' '}
                 <AnimeContainer data={data} />
-                <Pagination lastPage={data.pagination?.last_visible_page} />
+                {data.pagination?.has_next_page && (
+                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                )}{' '}
               </>
             ) : (
-              <p>No data</p>
+              <p>An unknown error ocurred</p>
             )}
           </>
         )}
       </StyledSection>
+      <FilterModalButton />
     </section>
   );
 }

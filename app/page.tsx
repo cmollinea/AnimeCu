@@ -5,9 +5,9 @@ import UpcomingList from './components/UpcomingList';
 import PersonalRecomendations from './components/PersonalRecomendations';
 import Divider from './components/Divider';
 import { getData } from './services/getData';
-import { Upcoming } from '@/types/upcoming';
-import { ActualSeason } from '@/types/emision';
-import { Top } from '@/types/top10';
+import { Upcoming } from '@/models/upcoming.model';
+import { ActualSeason } from '@/models/emision.model';
+import { Top } from '@/models/top_anime.model';
 
 const revalidation = 2592000;
 

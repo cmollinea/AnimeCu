@@ -2,7 +2,7 @@
 import Hero from './Hero';
 import ActualSeason from '../mocks/ActualSeason.json';
 import React, { useEffect, useState } from 'react';
-import { AnimeOnEmision } from '@/types/emision';
+import { AnimeOnEmision } from '@/models/emision.model';
 
 type Props = {
   animesOnEmision: AnimeOnEmision[];
@@ -24,7 +24,7 @@ function Carousel({ animesOnEmision }: Props) {
 
   return (
     <>
-      <section className='flex flex-col justify-center items-center transition-all duration-300 w-[90%]'>
+      <section className='flex flex-col justify-center items-center transition-all duration-300 sm:w-[90%]'>
         {/* Tuve que ser repetitivo para poder tener el efecto fade in */}
         {currentSlide === 0 && <Hero anime={animesOnEmision[0]} />}
         {currentSlide === 1 && <Hero anime={animesOnEmision[1]} />}
@@ -41,7 +41,7 @@ function Carousel({ animesOnEmision }: Props) {
         {animesOnEmision?.map((slide, index) => (
           <div
             key={index}
-            className={`h-2 w-2 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
+            className={`h-2 w-6 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
               currentSlide === index ? 'bg-lime-400' : 'bg-base-300/80'
             }`}
             onClick={() => setCurrentSlide(index)}

@@ -4,6 +4,7 @@ import cyberpunk from '@/app/mocks/cyberpunk.json';
 import ngnl from '@/app/mocks/ngnl.json';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 
 const recomendations = [ousama.data, cyberpunk.data, ngnl.data];
 
@@ -32,10 +33,11 @@ function PersonalRecomendations() {
               See Details
             </Link>
             <Link
-              className='py-2 px-8 font-bold rounded-lg bg-base-100 border border-solid border-lime-400/50  text-gray-100 hover:bg-lime-400 hover:text-black transition-all duration-300 ease-in-out'
-              href={anime.trailer.url}
+              className='py-2 px-8 flex items-center gap-0.5 font-bold rounded-lg bg-base-100 border border-solid border-lime-400/50  text-gray-100 hover:bg-lime-400 hover:text-black transition-all duration-300 ease-in-out group'
+              href={anime.trailer.url as string}
             >
               Trailer
+              <ArrowUpRightIcon className='w-3 transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:translate-x-0.5' />
             </Link>
           </div>
         </li>

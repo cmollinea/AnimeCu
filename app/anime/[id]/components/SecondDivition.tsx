@@ -1,6 +1,6 @@
 import Divider from '@/app/components/Divider';
 import Label from '@/app/components/Label';
-import { AnimeInfo } from '@/types/animeInfo';
+import { AnimeInfo } from '@/models/anime_full_info.model';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import MainCharacters from './MainCharacters';
 

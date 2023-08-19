@@ -60,51 +60,62 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className='max-sm:menu max-sm:menu-sm max-sm:dropdown-content max-sm:mt-3 max-sm:z-[1] max-sm:p-2 max-sm:shadow max-sm:bg-base-100 max-sm:rounded-box max-sm:bg-base-200/70 max-sm:backdrop-blur-lg w-fit flex px-4 gap-2 max-lg:text-xs'
+            className='max-sm:menu max-sm:menu-sm max-sm:dropdown-content max-sm:mt-3 max-sm:z-[1] max-sm:p-2 max-sm:shadow max-sm:bg-base-100 max-sm:rounded-box max-sm:bg-base-200/70 max-sm:backdrop-blur-lg w-fit flex px-4 gap-4 max-lg:text-xs'
           >
             <span className=''>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
+                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                  pathname === '/' ? 'text-lime-400 border-b-lime-400' : ''
+                }`}
                 href='/'
               >
                 Home{' '}
-                <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
             </span>
             <span className=''>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
+                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                  pathname.includes('/anime')
+                    ? 'text-lime-400 border-b-lime-400'
+                    : ''
+                }`}
                 href='/anime'
               >
                 Anime{' '}
-                <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
             </span>
             <span className=''>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
+                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                  pathname === '/ranking'
+                    ? 'text-lime-400 border-b-lime-400'
+                    : ''
+                }`}
                 href='/ranking'
               >
                 Ranking{' '}
-                <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
             </span>
             <span className=''>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
+                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                  pathname.includes('/manga')
+                    ? 'text-lime-400 border-b-lime-400'
+                    : ''
+                }`}
                 href='/manga'
               >
                 Manga{' '}
-                <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
             </span>
             <span className=''>
               <Link
-                className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group'
+                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                  pathname === '/dev' ? 'text-lime-400 border-b-lime-400' : ''
+                }`}
                 href='/dev'
               >
                 Dev
-                <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />{' '}
               </Link>
             </span>
           </ul>
@@ -114,19 +125,19 @@ const NavBar = () => {
         {showSearch && (
           <form
             onSubmit={(e) => handleSearch(e)}
-            className='w-fit h-fit group relative mr-8 animate__animated animate__bounceIn'
+            className='w-fit h-fit group relative mr-4 sm:mr-8 animate__animated animate__bounceIn'
           >
             <input
               onChange={(e) => setQuery(e.target.value)}
               value={query}
-              className='py-2 pl-1 w-40 lg:w-60 group rounded-lg border border-transparent focus:border-lime-400 ease-out transition-all duration-300 shadow-inner shadow-black outline-none placeholder:text-gray-400/50 placeholder:text-xs pr-8'
+              className='py-2 pl-1 w-44 lg:w-60 group rounded-lg border border-transparent focus ease-out transition-all duration-300 shadow-inner shadow-black outline-none placeholder:text-gray-400/50 placeholder:text-xs pr-8'
               type='text'
-              placeholder='Ex: Naruto, OnePiece, Dragon Ball'
+              placeholder='Ex: Naruto, OnePiece...'
             />
             <MagnifyingGlassIcon className='w-6 absolute right-2 top-3 transition-all text-gray-400/50 duration-300 ease-out group-focus-within:w-4 group-focus-within:text-lime-400' />
           </form>
         )}
-        <Link className='text-3xl font-black' href='#'>
+        <Link className='text-2xl sm:text-3xl font-black' href='/'>
           Anime<span className='text-lime-400'>.CU</span>
         </Link>
       </div>
