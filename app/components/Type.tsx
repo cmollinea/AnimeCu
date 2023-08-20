@@ -54,7 +54,7 @@ function Type({ filters }: Props) {
     <>
       <h2 className='py-4 text-xs text-lime-400/60'>Order by:</h2>
 
-      <div className='flex flex-wrap sm:flex-col gap-2'>
+      <div className='flex flex-col gap-2'>
         {typeOptions.map((type) => (
           <button
             onClick={() => setSelectedType(type)}

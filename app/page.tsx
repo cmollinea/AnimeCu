@@ -18,7 +18,7 @@ export default async function Home() {
     revalidation
   );
   const top10 = await getData<Top>(
-    'https://api.jikan.moe/v4/top/anime?limit=10&type=tv'
+    'https://api.jikan.moe/v4/top/anime?limit=10'
   );
   const upcoming = await getData<Upcoming>(
     'https://api.jikan.moe/v4/top/anime?filter=upcoming',

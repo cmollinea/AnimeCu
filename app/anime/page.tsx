@@ -1,10 +1,9 @@
 import StyledSection from '@/app/components/StyledSection';
-import AnimeFilters from './components/AnimeFIlters';
 import { getData } from '../services/getData';
 import { AnimeResponse } from '@/models/anime_response.model';
 import Pagination from '../components/Pagination';
 import AnimeContainer from './components/AnimeContainer';
-import FilterModalButton from './components/FilterModalButton';
+import Aside from '../components/Aside';
 
 type Props = {
   searchParams?: {
@@ -31,10 +30,8 @@ async function Anime({ searchParams }: Props) {
   const data = await getData<AnimeResponse>(URL);
   return (
     <section className='flex gap-10'>
-      <aside className='w-fit px-4 py-8 h-fit sticky top-0'>
-        <AnimeFilters />
-      </aside>
-      <StyledSection heading='Manga Explorer'>
+      <Aside />
+      <StyledSection heading='Anime Explorer'>
         {data?.data.length === 0 ? (
           <p>No Data</p>
         ) : (
@@ -55,7 +52,6 @@ async function Anime({ searchParams }: Props) {
           </>
         )}
       </StyledSection>
-      <FilterModalButton />
     </section>
   );
 }

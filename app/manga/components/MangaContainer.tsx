@@ -10,7 +10,7 @@ function MangaContainer({ data }: Props) {
   return (
     <div>
       {data.data.length > 0 ? (
-        <ul className='flex flex-wrap gap-10 py-10 px-8'>
+        <ul className='flex flex-wrap gap-10 py-10 md:px-8 place-content-center'>
           {data.data.map((manga) => (
             <Link
               className='max-w-[150px] border border-transparent group hover:border-lime-400/20 rounded-lg transition-colors duration-300 overflow-hidden'

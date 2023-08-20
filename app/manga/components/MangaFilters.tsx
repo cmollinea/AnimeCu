@@ -1,8 +1,9 @@
 'use client';
 
-import { STATUS, ORDER_BY, TYPE } from '../constant/anime_filters';
+import { STATUS, ORDER_BY, TYPE } from '../constants/manga_filters';
 import Filters from '@/app/components/Filters';
-function AnimeFilters() {
+
+function SearchOptions() {
   return (
     <>
       <Filters filters={STATUS} newSearchParam='status' />
@@ -12,4 +13,4 @@ function AnimeFilters() {
   );
 }
 
-export default AnimeFilters;
+export default SearchOptions;

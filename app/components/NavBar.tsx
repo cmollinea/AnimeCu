@@ -39,10 +39,10 @@ const NavBar = () => {
   }, [pathname]);
 
   return (
-    <nav className='navbar bg-base-200/70 backdrop-blur-lg sticky top-0 z-50 shadow-lg'>
+    <nav className='navbar bg-base-200/70 backdrop-blur-lg sticky top-0 z-30 shadow-lg'>
       <div className='navbar-start'>
         <div className='dropdown'>
-          <label tabIndex={0} className='btn btn-ghost btn-circle sm:hidden'>
+          <label tabIndex={0} className='btn btn-ghost btn-circle md:hidden'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-5 w-5'
@@ -60,11 +60,11 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className='max-sm:menu max-sm:menu-sm max-sm:dropdown-content max-sm:mt-3 max-sm:z-[1] max-sm:p-2 max-sm:shadow max-sm:bg-base-100 max-sm:rounded-box max-sm:bg-base-200/70 max-sm:backdrop-blur-lg w-fit flex px-4 gap-4 max-lg:text-xs'
+            className='max-md:menu max-md:menu-lg max-md:dropdown-content max-md:mt-3 max-md:z-[1] max-md:p-2 max-md:shadow max-md:bg-base-100 max-md:rounded-box max-md:bg-base-200/70 max-md:backdrop-blur-lg w-32 md:w-fit flex px-4 gap-4 max-md:place-content-center max-md:text-center'
           >
             <span className=''>
               <Link
-                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                className={`flex max-md:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent w-fit ${
                   pathname === '/' ? 'text-lime-400 border-b-lime-400' : ''
                 }`}
                 href='/'
@@ -74,7 +74,7 @@ const NavBar = () => {
             </span>
             <span className=''>
               <Link
-                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                className={`flex max-md:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent w-fit ${
                   pathname.includes('/anime')
                     ? 'text-lime-400 border-b-lime-400'
                     : ''
@@ -86,7 +86,7 @@ const NavBar = () => {
             </span>
             <span className=''>
               <Link
-                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                className={`flex max-md:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent w-fit ${
                   pathname === '/ranking'
                     ? 'text-lime-400 border-b-lime-400'
                     : ''
@@ -98,7 +98,7 @@ const NavBar = () => {
             </span>
             <span className=''>
               <Link
-                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                className={`flex max-md:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent w-fit ${
                   pathname.includes('/manga')
                     ? 'text-lime-400 border-b-lime-400'
                     : ''
@@ -110,7 +110,7 @@ const NavBar = () => {
             </span>
             <span className=''>
               <Link
-                className={`flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent ${
+                className={`flex max-md:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent w-fit ${
                   pathname === '/dev' ? 'text-lime-400 border-b-lime-400' : ''
                 }`}
                 href='/dev'
@@ -125,19 +125,19 @@ const NavBar = () => {
         {showSearch && (
           <form
             onSubmit={(e) => handleSearch(e)}
-            className='w-fit h-fit group relative mr-4 sm:mr-8 animate__animated animate__bounceIn'
+            className='w-fit h-fit group relative mr-4 md:mr-8 animate__animated animate__bounceIn'
           >
             <input
               onChange={(e) => setQuery(e.target.value)}
               value={query}
-              className='py-2 pl-1 w-44 lg:w-60 group rounded-lg border border-transparent focus ease-out transition-all duration-300 shadow-inner shadow-black outline-none placeholder:text-gray-400/50 placeholder:text-xs pr-8'
+              className='py-2 pl-1 w-44 lg:w-60 group rounded-lg border border-transparent focus:border-lime-400 ease-out transition-all duration-300 shadow-inner shadow-black outline-none placeholder:text-gray-400/50 placeholder:text-xs pr-8'
               type='text'
               placeholder='Ex: Naruto, OnePiece...'
             />
             <MagnifyingGlassIcon className='w-6 absolute right-2 top-3 transition-all text-gray-400/50 duration-300 ease-out group-focus-within:w-4 group-focus-within:text-lime-400' />
           </form>
         )}
-        <Link className='text-2xl sm:text-3xl font-black' href='/'>
+        <Link className='text-2xl md:text-3xl font-black' href='/'>
           Anime<span className='text-lime-400'>.CU</span>
         </Link>
       </div>

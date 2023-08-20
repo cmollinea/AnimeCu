@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import { getData } from '../services/getData';
-import SearchOptions from './components/SearchOptions';
 import StyledSection from '../components/StyledSection';
 import MangaContainer from './components/MangaContainer';
 import { MangaResponse } from '@/models/manga_response.model';
 import Pagination from '../components/Pagination';
+import Aside from '../components/Aside';
 
 type Props = {
   searchParams?: {
@@ -37,9 +37,7 @@ async function MangaRoute({ searchParams }: Props) {
 
   return (
     <section className='flex gap-10 h-full'>
-      <aside className='w-fit px-4 py-8 h-fit sticky top-0'>
-        <SearchOptions />
-      </aside>
+      <Aside />
       <StyledSection heading='Manga Explorer'>
         {data?.data.length === 0 ? (
           <p>No Data</p>

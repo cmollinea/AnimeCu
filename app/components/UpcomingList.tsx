@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import BasicCard from './BasicCard';
-import upcoming from '../mocks/upcoming.json';
 import { UpcomingAnime } from '@/models/upcoming.model';
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
 
@@ -15,7 +14,7 @@ type Props = {
 function UpcomingList({ upcomingsAnimes }: Props) {
   return (
     <>
-      <ul className='flex flex-wrap p-10 gap-6 justify-center'>
+      <ul className='flex flex-wrap lg:p-10 max-lg:pt-6 gap-6 justify-center'>
         {upcomingsAnimes.map((anime) => (
           <BasicCard key={anime.mal_id} anime={anime as UpcomingAnime} />
         ))}

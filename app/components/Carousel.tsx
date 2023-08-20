@@ -1,6 +1,5 @@
 'use client';
 import Hero from './Hero';
-import ActualSeason from '../mocks/ActualSeason.json';
 import React, { useEffect, useState } from 'react';
 import { AnimeOnEmision } from '@/models/emision.model';
 
@@ -41,7 +40,7 @@ function Carousel({ animesOnEmision }: Props) {
         {animesOnEmision?.map((slide, index) => (
           <div
             key={index}
-            className={`h-2 w-6 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
+            className={`h-1 w-6 rounded-full mt-10 transition-all duration-500 cursor-pointer hover:bg-lime-400/50 ${
               currentSlide === index ? 'bg-lime-400' : 'bg-base-300/80'
             }`}
             onClick={() => setCurrentSlide(index)}
