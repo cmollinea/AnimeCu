@@ -30,9 +30,7 @@ function AnimeContainer({ data }: Props) {
                 <p className='truncate font-bold group-hover:text-lime-400 transition-colors duration-300'>
                   {anime.title_english || anime.title_japanese}
                 </p>
-                <p className='text-sm opacity-60'>
-                  {anime.demographics[0]?.name}
-                </p>
+                <p className='text-xs opacity-60 truncate'>{anime.rating}</p>
                 <p className='text-xs opacity-60'>{anime.year}</p>
               </div>
             </Link>

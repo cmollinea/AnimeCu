@@ -37,16 +37,16 @@ function Pagination({ lastPage = 1 }: Props) {
     <div className='join mt-10'>
       <Link
         href={Number(page) > 1 ? pathname + '?' + prevPage() : ''}
-        className='join-item btn text-gray-400 font-bold'
+        className='join-item btn text-gray-400 transition-all duration-300 hover:text-lime-400 font-bold'
       >
         <ChevronLeftIcon className='w-4' />
       </Link>
-      <div className='join-item btn w-24 text-gray-400 font-bold'>
+      <div className='join-item cursor-default btn w-24 text-gray-400 font-bold'>
         {`Page ${page}`}
       </div>
       <Link
         href={Number(page) < lastPage ? pathname + '?' + nextPage() : ''}
-        className='join-item btn text-gray-400 font-bold'
+        className='join-item btn text-gray-400 transition-all duration-300 hover:text-lime-400 font-bold'
       >
         <ChevronRightIcon className='w-4' />
       </Link>

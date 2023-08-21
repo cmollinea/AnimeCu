@@ -3,6 +3,7 @@ import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import CardWithRank from './CardWithRank';
 import { TopAnime } from '@/models/top_anime.model';
+import BottomLink from './BottomLink';
 
 type Props = {
   topAnimes: TopAnime[];
@@ -23,13 +24,7 @@ function TopTenList({ topAnimes }: Props) {
           <CardWithRank key={anime.mal_id} anime={anime as TopAnime} />
         ))}
       </ul>
-      <Link
-        className='hover:text-lime-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute -bottom-6 right-6'
-        href={'/ranking'}
-      >
-        Go to Rank Page
-        <ChevronDoubleRightIcon className='w-5 mt-1 group-hover:translate-x-2 transition-all duration-300 ease-in-out' />
-      </Link>
+      <BottomLink href='/ranking'>Go to Rank Page</BottomLink>
     </>
   );
 }

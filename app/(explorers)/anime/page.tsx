@@ -1,7 +1,7 @@
 import StyledSection from '@/app/components/StyledSection';
-import { getData } from '../services/getData';
+import { getData } from '@/app/services/getData';
 import { AnimeResponse } from '@/models/anime_response.model';
-import Pagination from '../components/Pagination';
+import Pagination from '@/app/components/Pagination';
 import AnimeContainer from './components/AnimeContainer';
 import Aside from '../components/Aside';
 
@@ -33,7 +33,7 @@ async function Anime({ searchParams }: Props) {
       <Aside />
       <StyledSection heading='Anime Explorer'>
         {data?.data.length === 0 ? (
-          <p>No Data</p>
+          <p>There is nothing for you</p>
         ) : (
           <>
             {typeof data !== 'undefined' ? (

@@ -18,7 +18,7 @@ function BasicCard({ anime }: { anime: UpcomingAnime }) {
           alt={anime.title_japanese}
           height={300}
           width={300}
-          className='h-56 w-40 rounded-lg shadow-2xl border border-gray-100/5 group-hover:scale-110 transition-all duration-300 ease-in-out'
+          className='h-56 w-40 rounded-lg shadow-2xl border border-gray-100/5 group-hover:scale-110 transition-all duration-300 ease-in-out text-xs text-center'
         />
         <h2 className='w-full text-center font-bold truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out py-4'>
           {anime.title}

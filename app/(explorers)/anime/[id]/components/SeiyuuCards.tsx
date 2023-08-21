@@ -7,7 +7,7 @@ function SeiyuuCards({ characters }: { characters?: Characters[] }) {
   );
 
   return (
-    <ul className='flex text-center font-bold text-xs flex-wrap gap-10 no-underline place-content-center'>
+    <ul className='flex text-center font-bold text-xs flex-wrap gap-10 no-underline place-content-center mx-auto'>
       {voiceActors?.map((voiceActor) => (
         <li key={voiceActor?.person.mal_id} className='flex gap-6 h-fit mb-6'>
           <div>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import BasicCard from './BasicCard';
 import { UpcomingAnime } from '@/models/upcoming.model';
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
+import BottomLink from './BottomLink';
 
 type Props = {
   upcomingsAnimes: UpcomingAnime[];
@@ -14,18 +15,12 @@ type Props = {
 function UpcomingList({ upcomingsAnimes }: Props) {
   return (
     <>
-      <ul className='flex flex-wrap lg:p-10 max-lg:pt-6 gap-6 justify-center'>
+      <ul className='flex flex-wrap lg:p-10 max-lg:pt-6 gap-6 justify-center max-md:pb-6'>
         {upcomingsAnimes.map((anime) => (
           <BasicCard key={anime.mal_id} anime={anime as UpcomingAnime} />
         ))}
       </ul>
-      <Link
-        className='hover:text-lime-400/80 group text-gray-100 transition-all duration-300 ease-in-out font-black absolutes flex items-center absolute -bottom-6 right-6'
-        href={'/anime'}
-      >
-        Go to Explorer
-        <ChevronDoubleRightIcon className='w-5 mt-1 group-hover:translate-x-2 transition-all duration-300 ease-in-out' />
-      </Link>
+      <BottomLink href='/anime'>Go to Anime Explorer</BottomLink>
     </>
   );
 }

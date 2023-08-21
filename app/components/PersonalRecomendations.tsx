@@ -20,6 +20,7 @@ function PersonalRecomendations() {
               src={anime.images.webp.large_image_url}
               alt={anime.title_japanese}
               fill
+              className='text-xs text-center'
             />
           </figure>
 

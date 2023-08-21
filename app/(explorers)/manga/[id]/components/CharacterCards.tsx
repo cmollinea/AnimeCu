@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function CharacterCards({ characters }: { characters?: Characters[] }) {
   return (
-    <ul className='flex flex-wrap gap-10 text-xs font-bold text-center no-underline place-content-center'>
+    <ul className='flex flex-wrap gap-10 text-xs font-bold text-center no-underline mx-auto'>
       {characters?.map((character) => (
         <li key={character.character.mal_id} className='flex gap-6 h-fit mb-6'>
           <div>

@@ -12,10 +12,10 @@ function DropDown() {
           className='tooltip w-full before:bg-base-300 before:font-bold before:text-gray-400 rounded-2xl'
           data-tip='Click me to show/hide list of episodes'
         >
-          <div className='collapse bg-base-200'>
+          <div className='collapse overflow-x-auto bg-base-200'>
             <input type='checkbox' />
             <div className='collapse-title text-xl font-medium'>
-              <h2 className='lg:text-2xl text-lg font-bold text-lime-400 text-center'>
+              <h2 className='lg:text-2xl text-lg font-bold text-lime-400 w-full text-center'>
                 List of Episodes
               </h2>
             </div>

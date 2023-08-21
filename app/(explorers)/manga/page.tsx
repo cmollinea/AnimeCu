@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import { getData } from '../services/getData';
-import StyledSection from '../components/StyledSection';
+import { getData } from '@/app/services/getData';
+import StyledSection from '@/app/components/StyledSection';
 import MangaContainer from './components/MangaContainer';
 import { MangaResponse } from '@/models/manga_response.model';
-import Pagination from '../components/Pagination';
+import Pagination from '@/app/components/Pagination';
 import Aside from '../components/Aside';
 
 type Props = {
@@ -31,7 +31,6 @@ async function MangaRoute({ searchParams }: Props) {
   const URL = `https://api.jikan.moe/v4/manga?sfw&page=${page}&status=${status}&order_by=${order_by}&type=${type}&min_score=4&genres_exclude=4,8,12,49,64&sort=${
     order_by === 'score' ? 'desc' : 'asc'
   }&q=${query}`;
-  console.log(URL);
 
   const data = await getData<MangaResponse>(URL);
 
@@ -40,7 +39,7 @@ async function MangaRoute({ searchParams }: Props) {
       <Aside />
       <StyledSection heading='Manga Explorer'>
         {data?.data.length === 0 ? (
-          <p>No Data</p>
+          <p>There is nothing for you</p>
         ) : (
           <>
             {typeof data !== 'undefined' ? (
