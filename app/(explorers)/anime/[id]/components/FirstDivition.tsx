@@ -4,16 +4,17 @@ import Image from 'next/image';
 
 function FirstDivition({ anime }: { anime: AnimeInfo }) {
   return (
-    <div className='flex flex-col gap-4 text-xs lg:text-sm font-bold w-full text-gray-400 max-lg:col-span-2'>
+    <section className='flex flex-col gap-4 text-xs lg:text-sm font-bold w-full text-gray-400 max-lg:col-span-2'>
       <div className='w-full flex flex-col place-content-center max-lg:items-center pb-2'>
-        <Image
-          src={anime.images.webp.large_image_url}
-          alt={anime.title_japanese}
-          placeholder='blur'
-          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
-          width={300}
-          height={400}
-        />
+        <span className='relative w-[200px] h-[325px] md:w-[300px] md:h-[425px]'>
+          <Image
+            src={anime.images.webp.large_image_url}
+            alt={anime.title_japanese}
+            placeholder='blur'
+            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
+            fill
+          />
+        </span>
         <ul className='flex gap-2 pt-4 w-fit'>
           {anime.genres.map((genre) => (
             <li
@@ -95,7 +96,7 @@ function FirstDivition({ anime }: { anime: AnimeInfo }) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

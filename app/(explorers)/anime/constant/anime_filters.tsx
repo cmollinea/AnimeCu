@@ -15,5 +15,6 @@ export const STATUS = {
 export const ORDER_BY = {
   default: 'mal_id',
   title: 'title',
-  popularity: 'popularity'
+  popularity: 'popularity',
+  rank: 'rank'
 };

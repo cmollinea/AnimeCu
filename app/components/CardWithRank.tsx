@@ -9,7 +9,7 @@ function CardWithRank({ anime }: { anime: TopAnime }) {
     <Link
       href={`/anime/${anime.mal_id}`}
       key={anime.mal_id}
-      className='card card-side bg-base-100 shadow-x w-[350px] sm:w-full h-[160px] sm:h-[200px] border border-transparent cursor-pointer group hover:border-lime-400/20 transition-all duration-300 ease-in-out'
+      className='card card-side bg-base-100 shadow-x w-[360px] sm:w-full sm:max-w-xl h-[160px] sm:h-[200px] border border-transparent cursor-pointer group hover:border-lime-400/20 transition-all duration-300 ease-in-out'
       title={anime.title}
     >
       <figure className='w-[30%] relative'>

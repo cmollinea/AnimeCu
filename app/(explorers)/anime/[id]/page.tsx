@@ -6,7 +6,6 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import Divider from '@/app/components/Divider';
 import DropDown from './components/DropDown';
 import { getAnimeFullInfo } from './services/getAnimeFullInfo';
-import Label from '../../components/Label';
 
 type Props = {
   params: {
@@ -28,7 +27,7 @@ async function AnimeInfo({ params }: Props) {
   return (
     <>
       <div className='lg:w-full flex justify-center items-center py-10 text-lg lg:text-2xl font-bold gap-10'>
-        <h1 className=' text-lime-400 flex flex-wrap'>
+        <h1 className=' text-lime-400 flex px-4 text-center'>
           {anime?.title}
           <span className='divider divider-horizontal after:bg-base-300/80 before:bg-base-300/80 text-xs max-lg:hidden'></span>
           <span className='max-lg:hidden'>{anime?.title_japanese}</span>
@@ -48,8 +47,13 @@ async function AnimeInfo({ params }: Props) {
           </>
         )}
       </section>
-      <Divider />
-      <DropDown />
+      {anime?.type !== 'Movie' && (
+        <>
+          {' '}
+          <Divider />
+          <DropDown />
+        </>
+      )}
     </>
   );
 }

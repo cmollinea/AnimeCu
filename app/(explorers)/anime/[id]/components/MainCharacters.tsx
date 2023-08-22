@@ -25,11 +25,11 @@ async function MainCharacters({ params }: Props) {
           {' '}
           <Divider />
           <section className='py-2 grid  gap-4'>
-            <h2 className='lg:text-lg text-md font-bold text-lime-400 text-center'>
+            <h2 className='lg:text-lg text-base text-lime-400 text-center'>
               Main Characters
             </h2>
             <CharacterCards characters={mainCharacters} />
-            <h2 className='lg:text-lg text-md font-bold text-lime-400 text-center'>
+            <h2 className='lg:text-lg text-base text-lime-400 text-center'>
               Seiyuus
             </h2>
             <SeiyuuCards characters={mainCharacters} />

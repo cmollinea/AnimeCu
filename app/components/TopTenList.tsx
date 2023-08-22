@@ -19,7 +19,7 @@ function TopTenList({ topAnimes }: Props) {
   return (
     <>
       {' '}
-      <ul className='grid lg:grid-cols-2 justify-center items-center gap-5 py-10 px-24 w-full'>
+      <ul className='grid lg:grid-cols-2 justify-items-center gap-y-8 gap-x-16 py-10 lg:px-32 w-full'>
         {sortedAnime.map((anime) => (
           <CardWithRank key={anime.mal_id} anime={anime as TopAnime} />
         ))}

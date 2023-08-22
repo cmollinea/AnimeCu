@@ -16,4 +16,5 @@ export type AnimeOrderBy = {
   default: string;
   title: string;
   popularity: string;
+  rank:string
 };
