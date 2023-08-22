@@ -1,9 +1,9 @@
 import StyledSection from '@/app/components/StyledSection';
 import { getData } from '@/app/services/getData';
 import { AnimeResponse } from '@/models/anime_response.model';
-import Pagination from '@/app/components/Pagination';
 import AnimeContainer from './components/AnimeContainer';
 import Aside from '../components/Aside';
+import NewPagination from '@/app/components/NewPagination';
 
 type Props = {
   searchParams?: {
@@ -39,11 +39,15 @@ async function Anime({ searchParams }: Props) {
             {typeof data !== 'undefined' ? (
               <>
                 {data.pagination?.has_next_page && (
-                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                  <NewPagination
+                    lastPage={data.pagination?.last_visible_page}
+                  />
                 )}{' '}
                 <AnimeContainer data={data} />
                 {data.pagination?.has_next_page && (
-                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                  <NewPagination
+                    lastPage={data.pagination?.last_visible_page}
+                  />
                 )}{' '}
               </>
             ) : (

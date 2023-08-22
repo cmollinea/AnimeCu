@@ -3,8 +3,8 @@ import { getData } from '@/app/services/getData';
 import StyledSection from '@/app/components/StyledSection';
 import MangaContainer from './components/MangaContainer';
 import { MangaResponse } from '@/models/manga_response.model';
-import Pagination from '@/app/components/Pagination';
 import Aside from '../components/Aside';
+import NewPagination from '@/app/components/NewPagination';
 
 type Props = {
   searchParams?: {
@@ -45,11 +45,15 @@ async function MangaRoute({ searchParams }: Props) {
             {typeof data !== 'undefined' ? (
               <>
                 {data.pagination?.has_next_page && (
-                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                  <NewPagination
+                    lastPage={data.pagination?.last_visible_page}
+                  />
                 )}
                 <MangaContainer data={data} />
                 {data.pagination?.has_next_page && (
-                  <Pagination lastPage={data.pagination?.last_visible_page} />
+                  <NewPagination
+                    lastPage={data.pagination?.last_visible_page}
+                  />
                 )}{' '}
               </>
             ) : (
