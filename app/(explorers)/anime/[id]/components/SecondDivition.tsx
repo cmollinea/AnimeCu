@@ -3,6 +3,7 @@ import Label from '../../../components/Label';
 import { AnimeInfo } from '@/models/anime_full_info.model';
 import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
 import MainCharacters from './MainCharacters';
+import Trailer from './Trailer';
 
 function SecondDivition({
   anime,
@@ -19,14 +20,9 @@ function SecondDivition({
         {anime.synopsis}
       </p>
       {anime.trailer.url ? (
-        <a
-          className='flex max-sm:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group mt-4 w-fit'
-          target='_blank'
-          href={anime.trailer.url}
-        >
-          Trailer{' '}
-          <ArrowUpRightIcon className='w-3 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-all duration-300 ease-in-out' />
-        </a>
+        <div className='flex place-content-center'>
+          <Trailer url={anime.trailer.url} />
+        </div>
       ) : null}
       <MainCharacters params={params} />
       <Divider />
