@@ -1,12 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Roboto_Condensed } from 'next/font/google';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-// const roboto = Roboto({
-//   subsets: ['latin'],
-//   weight: ['100', '300', '400', '500', '700', '900']
-// });
+
+const roboto_condensed = Roboto_Condensed({
+  subsets: ['latin'],
+  weight: ['300', '400', '700']
+});
 
 export const metadata: Metadata = {
   title: 'AnimeCU | Home',
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html data-theme='luxury' lang='en'>
-      <body className={`text-gray-300 overflow-x-hidden`}>
+      <body
+        className={`text-gray-300 overflow-x-hidden ${roboto_condensed.className}`}
+      >
         <NavBar /> <main className='min-h-screen relative'>{children}</main>
         <Footer />
       </body>
