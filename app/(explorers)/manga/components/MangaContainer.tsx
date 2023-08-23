@@ -21,6 +21,8 @@ function MangaContainer({ data }: Props) {
                 <Image
                   className=' group-hover:scale-110 transition-transform duration-300'
                   src={manga.images.webp.large_image_url}
+                  placeholder='blur'
+                  blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
                   fill
                   alt={manga.title_japanese}
                 />

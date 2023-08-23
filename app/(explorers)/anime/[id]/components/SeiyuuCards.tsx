@@ -10,12 +10,13 @@ function SeiyuuCards({ characters }: { characters?: Characters[] }) {
     <ul className='flex text-center font-bold text-xs flex-wrap gap-10 no-underline place-content-center mx-auto'>
       {voiceActors?.map((voiceActor) => (
         <li key={voiceActor?.person.mal_id} className='flex gap-6 h-fit mb-6'>
-          <div>
+          <div className='relative w-[100px] h-[100px]'>
             <Image
               alt={voiceActor?.person.name as string}
               src={voiceActor?.person.images.jpg.image_url as string}
-              height={100}
-              width={100}
+              placeholder='blur'
+              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
+              fill
               className='mask mask-squircle'
             />
             <p>{voiceActor?.person.name}</p>

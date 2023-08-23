@@ -19,6 +19,8 @@ function PersonalRecomendations() {
             <Image
               src={anime.images.webp.large_image_url}
               alt={anime.title_japanese}
+              placeholder='blur'
+              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
               fill
               className='text-xs text-center'
             />

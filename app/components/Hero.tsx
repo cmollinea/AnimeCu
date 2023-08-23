@@ -19,7 +19,9 @@ function Hero({ anime }: Props) {
             <Image
               src={anime.images.webp.large_image_url}
               className='max-sm:h-48 max:sm:w-32 shadow-2xl border border-violet-400/20'
-              alt='hero-image'
+              placeholder='blur'
+              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
+              alt={anime.title_japanese}
               // width={200}
               // height={250}
               fill

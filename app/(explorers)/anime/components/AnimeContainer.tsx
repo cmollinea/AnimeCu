@@ -21,6 +21,8 @@ function AnimeContainer({ data }: Props) {
                 <Image
                   className=' group-hover:scale-110 transition-transform duration-300'
                   src={anime.images.webp.large_image_url}
+                  placeholder='blur'
+                  blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
                   fill
                   alt={anime.title_japanese}
                 />

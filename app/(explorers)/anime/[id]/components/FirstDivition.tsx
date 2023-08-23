@@ -89,6 +89,8 @@ function FirstDivition({ anime }: { anime: AnimeInfo }) {
                     : ''
                 }
                 alt={plataform.name}
+                placeholder='blur'
+                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
                 height={40}
                 width={40}
               />

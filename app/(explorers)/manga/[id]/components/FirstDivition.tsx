@@ -9,6 +9,8 @@ function FirstDivition({ manga }: { manga: Info }) {
         <Image
           src={manga.images.webp.large_image_url}
           alt={manga.title_japanese}
+          placeholder='blur'
+          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
           width={300}
           height={400}
         />

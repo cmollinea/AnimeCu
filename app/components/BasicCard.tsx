@@ -16,6 +16,8 @@ function BasicCard({ anime }: { anime: UpcomingAnime }) {
         <Image
           src={anime.images.webp.large_image_url}
           alt={anime.title_japanese}
+          placeholder='blur'
+          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
           height={300}
           width={300}
           className='h-56 w-40 rounded-lg shadow-2xl border border-gray-100/5 group-hover:scale-110 transition-all duration-300 ease-in-out text-xs text-center'
