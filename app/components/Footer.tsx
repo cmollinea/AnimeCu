@@ -14,40 +14,80 @@ function Footer() {
       </div>
       <div>
         <span className='footer-title'>Social</span>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://github.com/cmollinea'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           GitHub
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://t.me/Mouse_Potat0'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           Telegram
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://www.twitter.com/on3on3'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           Twitter
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://cu.linkedin.com/in/carlos-yoan-mollinea-43206827b'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           LinkedIn
         </Link>
       </div>
       <div>
         <span className='footer-title'>Powered by</span>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://myanimelist.net/'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           My Anime List
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://jikan.moe/'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           Jikan
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://nextjs.org/'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           NextJS
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={'https://tailwindcss.com/'}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           TailwindCSS
         </Link>
       </div>
       <div>
         <span className='footer-title'>Legal</span>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={''}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           Terms of use
         </Link>
-        <Link href={''} className='link hover:underline link-hover'>
+        <Link
+          href={''}
+          target='_blank'
+          className='link hover:underline link-hover'
+        >
           Privacy policy
         </Link>
       </div>

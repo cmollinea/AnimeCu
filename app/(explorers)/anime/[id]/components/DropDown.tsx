@@ -7,7 +7,7 @@ const queryClient = new QueryClient();
 function DropDown() {
   return (
     <QueryClientProvider client={queryClient}>
-      <section className='p-10 '>
+      <section className='px-10 '>
         <div
           className='tooltip w-full before:bg-base-300 before:font-bold before:text-gray-400 rounded-2xl'
           data-tip='Click me to show/hide list of episodes'
