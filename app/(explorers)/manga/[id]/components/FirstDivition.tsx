@@ -6,15 +6,16 @@ function FirstDivition({ manga }: { manga: Info }) {
   return (
     <div className='flex flex-col gap-4 text-xs lg:text-sm font-bold w-full text-gray-400 max-lg:col-span-2'>
       <div className='w-full flex flex-col place-content-center max-lg:items-center pb-2'>
-        <Image
-          src={manga.images.webp.large_image_url}
-          alt={manga.title_japanese}
-          placeholder='blur'
-          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
-          width={300}
-          height={400}
-        />
-        <ul className='flex gap-2 flex-wrap'>
+        <span className='relative w-[200px] h-[325px] md:w-[300px] md:h-[425px]'>
+          <Image
+            src={manga.images.webp.large_image_url}
+            alt={manga.title_japanese}
+            placeholder='blur'
+            blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
+            fill
+          />
+        </span>
+        <ul className='flex gap-2 pt-4 w-fit'>
           {manga.genres.map((genre) => (
             <li
               className=' badge-primary flex items-center text-xs badge-sm rounded-lg font-semibold bg-base-300 text-gray-200'
