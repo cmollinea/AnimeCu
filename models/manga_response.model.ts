@@ -6,7 +6,7 @@ export interface MangaResponse {
 export interface MangaItem {
   mal_id: number;
   url: string;
-  images: { [key: string]: Image };
+  images: { jpg: Image; webp: Image };
   approved: boolean;
   titles: Title[];
   title: string;

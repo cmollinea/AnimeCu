@@ -1,3 +1,4 @@
+import BasicCard from '@/app/components/BasicCard';
 import { MangaResponse } from '@/models/manga_response.model';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,32 +13,18 @@ function MangaContainer({ data }: Props) {
       {data.data.length > 0 ? (
         <ul className='flex flex-wrap gap-10 py-10 md:px-8 place-content-center'>
           {data.data.map((manga) => (
-            <Link
-              className='max-w-[150px] border border-transparent group hover:border-lime-400/20 rounded-lg transition-colors duration-300 overflow-hidden'
-              href={`/manga/${manga.mal_id}`}
+            <BasicCard
               key={manga.mal_id}
-            >
-              <div className='relative w-[150px] h-[230px] p-1'>
-                <Image
-                  className=' group-hover:scale-110 transition-transform duration-300'
-                  src={manga.images.webp.large_image_url}
-                  placeholder='blur'
-                  blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
-                  fill
-                  alt={manga.title_japanese}
-                />
-              </div>
-              <div className='z-10 relative bg-base-100 p-1'>
-                {' '}
-                <p className='truncate font-bold group-hover:text-lime-400 transition-colors duration-300'>
-                  {manga.title_english || manga.title_japanese}
-                </p>
-                <p className='text-sm opacity-60'>{manga.authors[0].name}</p>
-                <p className='text-xs opacity-60'>
-                  {manga.published.prop.from.year}
-                </p>
-              </div>
-            </Link>
+              info={{
+                title: manga.title,
+                id: manga.mal_id,
+                japaneseTitle: manga.title_japanese,
+                image: manga.images.webp.large_image_url,
+                dataType: 'manga',
+                year: manga.published.prop.from.year as number,
+                author: manga.authors[0].name
+              }}
+            />
           ))}
         </ul>
       ) : (

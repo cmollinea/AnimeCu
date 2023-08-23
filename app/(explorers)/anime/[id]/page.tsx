@@ -47,13 +47,14 @@ async function AnimeInfo({ params }: Props) {
           </>
         )}
       </section>
-      {anime?.type !== 'Movie' && (
-        <>
-          {' '}
-          <Divider />
-          <DropDown />
-        </>
-      )}
+      {anime?.type !== 'Movie' ||
+        (anime.episodes === 0 && (
+          <>
+            {' '}
+            <Divider />
+            <DropDown />
+          </>
+        ))}
     </>
   );
 }

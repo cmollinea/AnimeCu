@@ -23,7 +23,6 @@ function SecondDivition({
         <i> {manga.background}</i>
       </p>
       <MainCharacters params={params} />
-      <Divider />
     </div>
   );
 }

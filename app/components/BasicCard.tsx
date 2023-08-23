@@ -1,30 +1,48 @@
 import React from 'react';
-import { UpcomingAnime } from '@/models/upcoming.model';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function BasicCard({ anime }: { anime: UpcomingAnime }) {
+type Props = {
+  info: {
+    title: string;
+    id: number;
+    japaneseTitle: string;
+    image: string;
+    dataType: string;
+    year?: number;
+    rating?: string;
+    author?: string;
+  };
+};
+
+function BasicCard({ info }: Props) {
   return (
     <Link
-      key={anime.mal_id}
-      className='bg-base-100 p-2 rounded-lg border border-transparent shadow-x w-40 h-fit cursor-pointer group hover:border-lime-400/20 overflow-hidden transition-all duration-300 ease-in-out'
-      title={anime.title}
-      href={`/anime/${anime.mal_id}`}
+      className='max-w-[150px] border border-transparent group hover:border-lime-400/20 rounded-lg transition-colors duration-300 overflow-hidden'
+      href={
+        info.dataType === 'anime' ? `/anime/${info.id}` : `/manga/${info.id}`
+      }
     >
-      <div>
-        {' '}
+      <div className='relative w-[150px] h-[230px] p-1'>
         <Image
-          src={anime.images.webp.large_image_url}
-          alt={anime.title_japanese}
+          className=' group-hover:scale-110 transition-transform duration-300'
+          src={info.image}
           placeholder='blur'
           blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
-          height={300}
-          width={300}
-          className='h-56 w-40 rounded-lg shadow-2xl border border-gray-100/5 group-hover:scale-110 transition-all duration-300 ease-in-out text-xs text-center'
+          fill
+          alt={info.japaneseTitle}
         />
-        <h2 className='w-full text-center font-bold truncate group-hover:text-lime-400 transition-all duration-300 ease-in-out py-4'>
-          {anime.title}
-        </h2>
+      </div>
+      <div className='z-10 relative bg-base-100 p-1'>
+        {' '}
+        <p className='truncate font-bold group-hover:text-lime-400 transition-colors duration-300'>
+          {info.title || info.japaneseTitle}
+        </p>
+        {info.author && <p className='text-sm opacity-60'>{info.author}</p>}
+        {info.rating && (
+          <p className='text-xs opacity-60 truncate'>{info.rating}</p>
+        )}
+        {info.year && <p className='text-xs opacity-60'>{info.year}</p>}
       </div>
     </Link>
   );

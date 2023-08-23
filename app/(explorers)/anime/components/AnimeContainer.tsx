@@ -1,3 +1,4 @@
+import BasicCard from '@/app/components/BasicCard';
 import { AnimeResponse } from '@/models/anime_response.model';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,30 +13,18 @@ function AnimeContainer({ data }: Props) {
       {data.data.length > 0 ? (
         <ul className='flex flex-wrap gap-10 py-10 md:px-8  place-content-center'>
           {data.data.map((anime) => (
-            <Link
-              className='max-w-[150px] border border-transparent group hover:border-lime-400/20 rounded-lg transition-colors duration-300 overflow-hidden'
-              href={`/anime/${anime.mal_id}`}
+            <BasicCard
               key={anime.mal_id}
-            >
-              <div className='relative w-[150px] h-[230px] p-1'>
-                <Image
-                  className=' group-hover:scale-110 transition-transform duration-300'
-                  src={anime.images.webp.large_image_url}
-                  placeholder='blur'
-                  blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+/ahJAAIYALWsWuAbQAAAABJRU5ErkJggg=='
-                  fill
-                  alt={anime.title_japanese}
-                />
-              </div>
-              <div className='z-10 relative bg-base-100 p-1'>
-                {' '}
-                <p className='truncate font-bold group-hover:text-lime-400 transition-colors duration-300'>
-                  {anime.title_english || anime.title_japanese}
-                </p>
-                <p className='text-xs opacity-60 truncate'>{anime.rating}</p>
-                <p className='text-xs opacity-60'>{anime.year}</p>
-              </div>
-            </Link>
+              info={{
+                title: anime.title,
+                id: anime.mal_id,
+                japaneseTitle: anime.title_japanese,
+                image: anime.images.webp.large_image_url,
+                dataType: 'anime',
+                year: anime.aired.prop.from.year,
+                rating: anime.rating
+              }}
+            />
           ))}
         </ul>
       ) : (
