@@ -11,7 +11,7 @@ export interface OneAnimeInfo {
 export interface AnimeInfo {
   mal_id: number;
   url: string;
-  images: { [key: string]: Image };
+  images: { jpg: Image; webp: Image };
   trailer: Trailer;
   approved: boolean;
   titles: Title[];

@@ -12,7 +12,7 @@ export interface Top {
 export interface TopAnime {
   mal_id: number;
   url: string;
-  images: { jpg?: Image; webp?: Image };
+  images: { jpg: Image; webp: Image };
   trailer: Trailer;
   approved: boolean;
   titles: Title[];
