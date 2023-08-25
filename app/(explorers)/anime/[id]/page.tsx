@@ -9,7 +9,7 @@ import { getAnimeFullInfo } from './services/getAnimeFullInfo';
 import ErrorFeedbackWithRetry from '@/app/components/ErrorFeedbackWithRetry';
 import StyledSection from '@/app/components/StyledSection';
 import InfoHeading from '../../components/InfoHeading';
-import InfoContainer from '../../components/InfoCOntainer';
+import InfoContainer from '../../components/InfoContainer';
 
 type Props = {
   params: {
