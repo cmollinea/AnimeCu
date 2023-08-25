@@ -14,8 +14,8 @@ function DropDown() {
         >
           <div className='collapse overflow-x-auto bg-base-200'>
             <input type='checkbox' />
-            <div className='collapse-title text-xl font-medium'>
-              <h2 className='lg:text-2xl text-lg font-bold text-lime-400 w-full text-center'>
+            <div className='collapse-title px-0'>
+              <h2 className='lg:text-2xl text-lg font-bold text-lime-400'>
                 List of Episodes
               </h2>
             </div>

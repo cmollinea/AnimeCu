@@ -75,20 +75,13 @@ function Footer() {
         </Link>
       </div>
       <div>
-        <span className='footer-title'>Legal</span>
+        <span className='footer-title'>Attributions</span>
         <Link
-          href={''}
+          href='https://storyset.com/people'
           target='_blank'
           className='link hover:underline link-hover'
         >
-          Terms of use
-        </Link>
-        <Link
-          href={''}
-          target='_blank'
-          className='link hover:underline link-hover'
-        >
-          Privacy policy
+          People illustrations by Storyset
         </Link>
       </div>
     </footer>

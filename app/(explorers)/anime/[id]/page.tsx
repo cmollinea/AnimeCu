@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
 import FirstDivition from './components/FirstDivition';
-import { AnimeInfo } from '@/models/anime_full_info.model';
 import SecondDivition from './components/SecondDivition';
-import { StarIcon } from '@heroicons/react/24/solid';
 import Divider from '@/app/components/Divider';
 import DropDown from './components/DropDown';
 import { getAnimeFullInfo } from './services/getAnimeFullInfo';
@@ -45,7 +43,7 @@ async function AnimeInfo({ params }: Props) {
           <FirstDivition anime={anime} />
           <SecondDivition anime={anime} params={params} />
         </InfoContainer>
-        {anime?.type !== 'Movie' && anime.episodes > 0 && (
+        {anime?.type !== 'Movie' && (
           <>
             {' '}
             <Divider />
