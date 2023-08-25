@@ -111,11 +111,11 @@ const NavBar = () => {
             <span className=''>
               <Link
                 className={`flex max-md:text-xl items-center gap-0.5 opacity-80 font-bold hover:opacity-100 hover:text-lime-400 transition-all group border-b border-transparent w-fit ${
-                  pathname === '/dev' ? 'text-lime-400 border-b-lime-400' : ''
+                  pathname === '/about' ? 'text-lime-400 border-b-lime-400' : ''
                 }`}
-                href='/dev'
+                href='/about'
               >
-                Dev
+                About Me
               </Link>
             </span>
           </ul>

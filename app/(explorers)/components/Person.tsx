@@ -7,7 +7,7 @@ type Props = {
 
 function Person({ name, image }: Props) {
   return (
-    <li className='flex flex-col gap-2 h-fit mb-6'>
+    <li className='flex flex-col gap-2 h-fit mb-6 max-w-[100px]'>
       <div className='relative h-[100px] w-[100px]'>
         <Image
           alt={name}
@@ -18,7 +18,7 @@ function Person({ name, image }: Props) {
           className='mask mask-squircle'
         />
       </div>
-      <p>{name}</p>
+      <p className='truncate'>{name}</p>
     </li>
   );
 }

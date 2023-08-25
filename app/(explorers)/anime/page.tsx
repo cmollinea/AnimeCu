@@ -4,6 +4,8 @@ import { AnimeResponse } from '@/models/anime_response.model';
 import AnimeContainer from './components/AnimeContainer';
 import Aside from '../components/Aside';
 import NewPagination from '@/app/components/NewPagination';
+import FeedbackImage from '@/app/components/FeedBackImage';
+import ErrorFeedbackWithRetry from '@/app/components/ErrorFeedbackWithRetry';
 
 type Props = {
   searchParams?: {
@@ -31,9 +33,11 @@ async function Anime({ searchParams }: Props) {
   return (
     <section className='flex gap-10'>
       <Aside />
-      <StyledSection heading='Anime Explorer'>
+      <StyledSection
+        heading={typeof data !== 'undefined' ? 'Anime Explorer' : ''}
+      >
         {data?.data.length === 0 ? (
-          <p>There is nothing for you</p>
+          <FeedbackImage source='/nodata.svg' alt='No Data' />
         ) : (
           <>
             {typeof data !== 'undefined' ? (
@@ -51,7 +55,7 @@ async function Anime({ searchParams }: Props) {
                 )}{' '}
               </>
             ) : (
-              <p>An unknown error ocurred</p>
+              <ErrorFeedbackWithRetry />
             )}
           </>
         )}

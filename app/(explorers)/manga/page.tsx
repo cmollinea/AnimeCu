@@ -5,6 +5,8 @@ import MangaContainer from './components/MangaContainer';
 import { MangaResponse } from '@/models/manga_response.model';
 import Aside from '../components/Aside';
 import NewPagination from '@/app/components/NewPagination';
+import FeedbackImage from '@/app/components/FeedBackImage';
+import ErrorFeedbackWithRetry from '@/app/components/ErrorFeedbackWithRetry';
 
 type Props = {
   searchParams?: {
@@ -37,9 +39,11 @@ async function MangaRoute({ searchParams }: Props) {
   return (
     <section className='flex gap-10 h-full'>
       <Aside />
-      <StyledSection heading='Manga Explorer'>
+      <StyledSection
+        heading={typeof data !== 'undefined' ? 'Manga Explorer' : ''}
+      >
         {data?.data.length === 0 ? (
-          <p>There is nothing for you</p>
+          <FeedbackImage source='/nodata.svg' alt='No Data' />
         ) : (
           <>
             {typeof data !== 'undefined' ? (
@@ -57,7 +61,7 @@ async function MangaRoute({ searchParams }: Props) {
                 )}{' '}
               </>
             ) : (
-              <p>An unknown error ocurred</p>
+              <ErrorFeedbackWithRetry />
             )}
           </>
         )}
