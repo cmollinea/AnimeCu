@@ -6,7 +6,7 @@ import { MangaInfo } from '@/models/manga_full_info.model';
 import InfoHeading from '../../components/InfoHeading';
 import ErrorFeedbackWithRetry from '@/app/components/ErrorFeedbackWithRetry';
 import StyledSection from '@/app/components/StyledSection';
-import InfoContainer from '../../components/InfoCOntainer';
+import InfoContainer from '../../components/InfoContainer';
 
 type Props = {
   params: {

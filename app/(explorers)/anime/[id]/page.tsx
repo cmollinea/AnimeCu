@@ -42,8 +42,8 @@ async function AnimeInfo({ params }: Props) {
           score={anime?.score}
         />
         <InfoContainer>
-          <FirstDivition anime={anime as AnimeInfo} />
-          <SecondDivition anime={anime as AnimeInfo} params={params} />
+          <FirstDivition anime={anime} />
+          <SecondDivition anime={anime} params={params} />
         </InfoContainer>
         {anime?.type !== 'Movie' && anime.episodes > 0 && (
           <>
