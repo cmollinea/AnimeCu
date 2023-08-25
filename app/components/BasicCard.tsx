@@ -18,7 +18,6 @@ type Props = {
 function BasicCard({ info }: Props) {
   return (
     <Link
-      prefetch={false}
       className='max-w-[150px] border border-transparent group hover:border-lime-400/20 rounded-lg transition-colors duration-300 overflow-hidden'
       href={
         info.dataType === 'anime' ? `/anime/${info.id}` : `/manga/${info.id}`
