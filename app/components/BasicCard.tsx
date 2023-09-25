@@ -26,6 +26,7 @@ function BasicCard({ info }: Props) {
     >
       <div className='relative w-[150px] h-[230px] p-1'>
         <Image
+          key={info.id}
           className=' group-hover:scale-110 transition-transform duration-300'
           src={info.image}
           placeholder='blur'
